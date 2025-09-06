@@ -4,7 +4,10 @@ import Navigation from '../components/Navigation.jsx';
 import Hero from '../components/Hero.jsx';
 import ScrollAnimations from '../components/ScrollAnimations.jsx';
 import Footer from '../components/Footer.jsx';
+import Counter from '../components/Counter';
 import '../styles/global.css';
+import Countdown from "../components/Countdown.jsx";
+
 ---
 
 <Layout title="Open Source Day 2025 - Celebrate Innovation">
@@ -67,29 +70,46 @@ import '../styles/global.css';
   </section>
 
   <!-- Stats Section -->
-  <section class="py-20 px-4 bg-gradient-to-r from-green-50 to-green-100">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-4xl md:text-5xl font-bold text-black mb-16">By the Numbers</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div>
-          <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">500+</div>
-          <div class="text-black">Expected Attendees</div>
+
+
+<section class="py-20 px-4 bg-gradient-to-r from-green-50 to-green-100">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl md:text-5xl font-bold text-black mb-16">By the Numbers</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+
+      <div>
+        <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">
+          <Counter target={500} client:visible />+
         </div>
-        <div>
-          <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">10+</div>
-          <div class="text-black">Expert Speakers</div>
-        </div>
-        <div>
-          <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">5+</div>
-          <div class="text-black">Technical Sessions</div>
-        </div>
-        <div>
-          <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">1</div>
-          <div class="text-black">Full Day Event</div>
-        </div>
+        <div class="text-black">Expected Attendees</div>
       </div>
+
+      <div>
+        <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">
+          <Counter target={10} client:visible />+
+        </div>
+        <div class="text-black">Expert Speakers</div>
+      </div>
+
+      <div>
+        <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">
+          <Counter target={5} client:visible />+
+        </div>
+        <div class="text-black">Technical Sessions</div>
+      </div>
+
+      <div>
+        <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">
+          <Counter target={1} client:visible />
+        </div>
+        <div class="text-black">Full Day Event</div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
+
 
   <!-- CTA Section -->
   <section class="py-20 px-4 bg-white">
@@ -108,6 +128,30 @@ import '../styles/global.css';
       </a>
     </div>
   </section>
+
+
+  <!-- Countdown Section -->
+
+<section class="py-20 px-4 bg-white">
+  <div class="max-w-4xl mx-auto text-center animate-fade-up">
+    <h2 class="text-4xl md:text-5xl font-bold text-black mb-6">Ready to Join Us?</h2>
+    <p class="text-xl text-black mb-8">
+      Don't miss out on this amazing open source community event. Register now!
+    </p>
+    <a
+      href="https://konfhub.com/open-source-day-2025"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-block bg-green-500 hover:bg-green-400 text-white px-12 py-4 rounded-full font-bold text-xl transition-all duration-200 glow-effect hover:scale-105 transform"
+    >
+      Register Now
+    </a>
+  </div>
+
+  <!-- Countdown appears here -->
+  <Countdown client:load />
+</section>
+
 
   <!-- Footer -->
   <Footer client:load />

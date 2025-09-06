@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
 import { HERO, BRANDING, EVENT } from "../config.ts";
+import Counter from "../components/counter.jsx";
+
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -127,27 +129,31 @@ const Hero = () => {
 
         {/* Event details */}
         <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center px-4">
-          <div className="light-card p-4 md:p-6 rounded-2xl shadow-lg">
-            <h3 className="text-xl md:text-2xl font-bold text-green-600 mb-2">
-              {EVENT.date}
-            </h3>
-            <p className="text-sm md:text-base text-black">One Day Event</p>
-          </div>
-          <div className="light-card p-4 md:p-6 rounded-2xl shadow-lg">
-            <h3 className="text-xl md:text-2xl font-bold text-green-600 mb-2">
-              {EVENT.stats.expectedAttendees}
-            </h3>
-            <p className="text-sm md:text-base text-black">
-              Attendees Expected
-            </p>
-          </div>
-          <div className="light-card p-4 md:p-6 rounded-2xl shadow-lg">
-            <h3 className="text-xl md:text-2xl font-bold text-green-600 mb-2">
-              {EVENT.stats.speakers}
-            </h3>
-            <p className="text-sm md:text-base text-black">Expert Speakers</p>
-          </div>
-        </div>
+
+  <div className="light-card p-4 md:p-6 rounded-2xl shadow-lg">
+    <h3 className="text-xl md:text-2xl font-bold text-green-600 mb-2">
+      {EVENT.date}
+    </h3>
+    <p className="text-sm md:text-base text-black">One Day Event</p>
+  </div>
+
+  {/* Attendees */}
+  <div className="light-card p-4 md:p-6 rounded-2xl shadow-lg">
+    <h3 className="text-xl md:text-2xl font-bold text-green-600 mb-2">
+      <Counter target={EVENT.stats.expectedAttendees} client:visible />+
+    </h3>
+    <p className="text-sm md:text-base text-black">Attendees Expected</p>
+  </div>
+
+  {/* Speakers */}
+  <div className="light-card p-4 md:p-6 rounded-2xl shadow-lg">
+    <h3 className="text-xl md:text-2xl font-bold text-green-600 mb-2">
+      <Counter target={EVENT.stats.speakers} client:visible />+
+    </h3>
+    <p className="text-sm md:text-base text-black">Expert Speakers</p>
+  </div>
+</div>
+
       </div>
 
       {/* Scroll indicator */}
