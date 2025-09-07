@@ -113,7 +113,7 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-green-500/20 shadow-lg">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => (
+              {NAVIGATION.items.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
@@ -123,6 +123,7 @@ const Navigation = () => {
                   {item.name}
                 </a>
               ))}
+
               <a
                 href="https://konfhub.com/open-source-day-2025"
                 target="_blank"

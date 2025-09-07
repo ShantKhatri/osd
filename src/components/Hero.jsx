@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { HERO, BRANDING, EVENT } from "../config.ts";
+import Counter from "../components/counter.jsx";
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -133,17 +134,21 @@ const Hero = () => {
             </h3>
             <p className="text-sm md:text-base text-black">One Day Event</p>
           </div>
+
+          {/* Attendees */}
           <div className="light-card p-4 md:p-6 rounded-2xl shadow-lg">
             <h3 className="text-xl md:text-2xl font-bold text-green-600 mb-2">
-              {EVENT.stats.expectedAttendees}
+              <Counter target={EVENT.stats.expectedAttendees} client:visible />+
             </h3>
             <p className="text-sm md:text-base text-black">
               Attendees Expected
             </p>
           </div>
+
+          {/* Speakers */}
           <div className="light-card p-4 md:p-6 rounded-2xl shadow-lg">
             <h3 className="text-xl md:text-2xl font-bold text-green-600 mb-2">
-              {EVENT.stats.speakers}
+              <Counter target={EVENT.stats.speakers} client:visible />+
             </h3>
             <p className="text-sm md:text-base text-black">Expert Speakers</p>
           </div>

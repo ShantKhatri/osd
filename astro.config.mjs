@@ -10,6 +10,13 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
+  server: {
+    allowedHosts: [
+      '94cf578a9552.ngrok-free.app', // your current ngrok host
+      '*.ngrok-free.app',            // allow all ngrok subdomains (recommended)
+    ],
+  },
+
 
   integrations: [react()]
 });

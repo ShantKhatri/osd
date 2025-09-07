@@ -1,29 +1,47 @@
 ---
-import Layout from '../components/Layout.astro';
-import Navigation from '../components/Navigation.jsx';
-import { TICKETS } from '../config.ts';
-import '../styles/global.css';
+import CountdownTimer from "@components/CountdownTimer.jsx";
+import Layout from "../components/Layout.astro";
+import Navigation from "../components/Navigation.jsx";
+import { TICKETS } from "../config.ts";
+import "../styles/global.css";
 ---
 
 <Layout title="Tickets - OpenSource Weekend 2025">
   <Navigation client:load />
-  
+
   <!-- Hero Section -->
   <section class="pt-32 pb-20 px-4 bg-white">
     <div class="max-w-6xl mx-auto text-center">
       <div class="mb-8 flex justify-center">
-        <img src="/icons/OSDLogo.svg" alt="Open Source Day Logo" class="w-16 h-16 md:w-20 md:h-20" />
+        <img
+          src="/icons/OSDLogo.svg"
+          alt="Open Source Day Logo"
+          class="w-16 h-16 md:w-20 md:h-20"
+        />
       </div>
-      <h1 class="text-5xl md:text-7xl font-bold gradient-text mb-6">Get Your Tickets</h1>
+      <h1 class="text-5xl md:text-7xl font-bold gradient-text mb-6">
+        Get Your Tickets
+      </h1>
       <p class="text-xl text-black max-w-3xl mx-auto mb-8">
-        Choose the perfect ticket for your needs. All tickets include access to sessions, 
-        workshops, and networking opportunities.
+        Choose the perfect ticket for your needs. All tickets include access to
+        sessions, workshops, and networking opportunities.
       </p>
-      <div class="inline-flex items-center bg-green-500/20 border border-green-500/40 rounded-full px-6 py-3">
-        <svg class="w-5 h-5 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+      <div
+        class="inline-flex items-center bg-green-500/20 border border-green-500/40 rounded-full px-6 py-3"
+      >
+        <svg
+          class="w-5 h-5 text-green-400 mr-2"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+            clip-rule="evenodd"></path>
         </svg>
-        <span class="text-green-600 font-semibold">Limited seats available - Register now!</span>
+        <span class="text-green-600 font-semibold"
+          >Limited seats available - Register now!</span
+        >
       </div>
     </div>
   </section>
@@ -32,56 +50,74 @@ import '../styles/global.css';
   <section class="py-20 px-4 bg-white">
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {TICKETS.map((ticket) => (
-          <div class={`relative light-card rounded-xl p-8 transition-all duration-300 hover:scale-102 ${
-            ticket.popular 
-              ? 'border-green-500 ring-2 ring-green-500/20' 
-              : 'hover:border-green-500/40'
-          }`}>
-            {ticket.popular && (
-              <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span class="bg-green-500 text-black px-4 py-2 rounded-full text-sm font-bold">
-                  Most Popular
-                </span>
-              </div>
-            )}
-            
-            <div class="text-center mb-8">
-              <h3 class="text-2xl font-bold text-black mb-2">{ticket.name}</h3>
-              <p class="text-black mb-4">{ticket.description}</p>
-              <div class="flex items-center justify-center space-x-2">
-                {ticket.originalPrice && (
-                  <span class="text-2xl text-black-500 line-through">{ticket.originalPrice}</span>
-                )}
-                <span class="text-4xl font-bold gradient-text">{ticket.price}</span>
-              </div>
-            </div>
-            
-            <ul class="space-y-3 mb-8">
-              {ticket.features.map((feature) => (
-                <li class="flex items-center space-x-3">
-                  <svg class="w-5 h-5 text-green-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                  </svg>
-                  <span class="text-black">{feature}</span>
-                </li>
-              ))}
-            </ul>
-            
-            <a
-              href={ticket.konfhubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class={`block w-full py-4 rounded-full font-bold text-lg transition-all duration-200 text-center ${
+        {
+          TICKETS.map((ticket) => (
+            <div
+              class={`relative light-card rounded-xl p-8 transition-all duration-300 hover:scale-102 ${
                 ticket.popular
-                  ? 'bg-green-500 hover:bg-green-400 text-black glow-effect'
-                  : 'border-2 border-green-500 text-green-400 hover:bg-green-500 hover:text-black'
+                  ? "border-green-500 ring-2 ring-green-500/20"
+                  : "hover:border-green-500/40"
               }`}
             >
-              {ticket.available ? 'Register Now' : 'Sold Out'}
-            </a>
-          </div>
-        ))}
+              {ticket.popular && (
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <span class="bg-green-500 text-black px-4 py-2 rounded-full text-sm font-bold">
+                    Most Popular
+                  </span>
+                </div>
+              )}
+
+              <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold text-black mb-2">
+                  {ticket.name}
+                </h3>
+                <p class="text-black mb-4">{ticket.description}</p>
+                <div class="flex items-center justify-center space-x-2">
+                  {ticket.originalPrice && (
+                    <span class="text-2xl text-black-500 line-through">
+                      {ticket.originalPrice}
+                    </span>
+                  )}
+                  <span class="text-4xl font-bold gradient-text">
+                    {ticket.price}
+                  </span>
+                </div>
+              </div>
+
+              <ul class="space-y-3 mb-8">
+                {ticket.features.map((feature) => (
+                  <li class="flex items-center space-x-3">
+                    <svg
+                      class="w-5 h-5 text-green-400 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span class="text-black">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href={ticket.konfhubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class={`block w-full py-4 rounded-full font-bold text-lg transition-all duration-200 text-center ${
+                  ticket.popular
+                    ? "bg-green-500 hover:bg-green-400 text-black glow-effect"
+                    : "border-2 border-green-500 text-green-400 hover:bg-green-500 hover:text-black"
+                }`}
+              >
+                {ticket.available ? "Register Now" : "Sold Out"}
+              </a>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -158,10 +194,21 @@ import '../styles/global.css';
     </div>
   </section> -->
 
+  <!-- Countdown appears here -->
+  <div class="mt-5 py-16 px-4 bg-gradient-to-r from-green-50 to-green-100">
+    <div class="max-w-5xl mx-auto text-center">
+      <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-10">
+        Countdown to the Event 🚀
+      </h3>
+
+      <CountdownTimer client:load />
+    </div>
+  </div>
+
   <!-- Registration CTA -->
-  <section class="py-20 px-4">
+  <section class="py-15 mb-5 px-4">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl font-bold text-white mb-6">Ready to Register?</h2>
+      <h2 class="text-4xl font-bold text-black mb-6">Ready to Register?</h2>
       <p class="text-xl text-black-300 mb-8">
         Secure your spot at OpenSource Weekend 2025. Limited seats available!
       </p>
@@ -174,7 +221,8 @@ import '../styles/global.css';
         Register on KonfHub
       </a>
       <p class="text-sm text-black-400 mt-4">
-        Secure payment processing • Instant confirmation • Digital tickets • Easy refunds
+        Secure payment processing • Instant confirmation • Digital tickets •
+        Easy refunds
       </p>
     </div>
   </section>

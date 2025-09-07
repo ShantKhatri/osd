@@ -4,7 +4,10 @@ import Navigation from '../components/Navigation.jsx';
 import Hero from '../components/Hero.jsx';
 import ScrollAnimations from '../components/ScrollAnimations.jsx';
 import Footer from '../components/Footer.jsx';
+import Counter from '../components/Counter';
 import '../styles/global.css';
+import CountdownTimer from "../components/CountdownTimer.jsx";
+
 ---
 
 <Layout title="Open Source Day 2025 - Celebrate Innovation">
@@ -67,29 +70,46 @@ import '../styles/global.css';
   </section>
 
   <!-- Stats Section -->
-  <section class="py-20 px-4 bg-gradient-to-r from-green-50 to-green-100">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-4xl md:text-5xl font-bold text-black mb-16">By the Numbers</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div>
-          <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">500+</div>
-          <div class="text-black">Expected Attendees</div>
+
+
+<section class="py-20 px-4 bg-gradient-to-r from-green-50 to-green-100">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl md:text-5xl font-bold text-black mb-16">By the Numbers</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+
+      <div>
+        <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">
+          <Counter target={500} client:visible />+
         </div>
-        <div>
-          <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">10+</div>
-          <div class="text-black">Expert Speakers</div>
-        </div>
-        <div>
-          <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">5+</div>
-          <div class="text-black">Technical Sessions</div>
-        </div>
-        <div>
-          <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">1</div>
-          <div class="text-black">Full Day Event</div>
-        </div>
+        <div class="text-black">Expected Attendees</div>
       </div>
+
+      <div>
+        <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">
+          <Counter target={10} client:visible />+
+        </div>
+        <div class="text-black">Expert Speakers</div>
+      </div>
+
+      <div>
+        <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">
+          <Counter target={5} client:visible />+
+        </div>
+        <div class="text-black">Technical Sessions</div>
+      </div>
+
+      <div>
+        <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">
+          <Counter target={1} client:visible />
+        </div>
+        <div class="text-black">Full Day Event</div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
+
 
   <!-- CTA Section -->
   <section class="py-20 px-4 bg-white">
@@ -108,6 +128,23 @@ import '../styles/global.css';
       </a>
     </div>
   </section>
+
+
+  <!-- Countdown Section -->
+
+
+  <!-- Countdown appears here -->
+<div class="mt-5 py-16 px-4 bg-gradient-to-r from-green-50 to-green-100">
+  <div class="max-w-5xl mx-auto text-center">
+    <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-10">
+      Countdown to the Event 🚀
+    </h3>
+
+    <CountdownTimer client:load />
+  </div>
+</div>
+
+
 
   <!-- Footer -->
   <Footer client:load />
