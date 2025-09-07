@@ -1,0 +1,83 @@
+---
+import Layout from '../components/Layout.astro';
+import Navigation from '../components/Navigation.jsx';
+import Footer from '../components/Footer.jsx';
+import '../styles/global.css';
+import { TEAM } from '../config.ts';
+---
+
+<Layout title="Team - Open Source Day 2025">
+  <Navigation client:load />
+
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold">Our Team</h1>
+        <p class="text-gray-600 mt-2">Meet the people who make Open Source Day possible.</p>
+      </div>
+
+      <div class="space-y-12">
+        {TEAM.advisory && (
+          <div>
+            <h2 class="text-2xl font-semibold mb-6">Advisory Board</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {TEAM.advisory.map((m) => (
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                  <img src={m.image} alt={m.name} class="w-28 h-28 rounded-full mx-auto object-cover mb-4" />
+                  <h3 class="font-semibold text-lg">{m.name}</h3>
+                  <div class="text-sm text-gray-600">{m.role}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {TEAM.mentors && (
+          <div>
+            <h2 class="text-2xl font-semibold mb-6">Mentor Board</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {TEAM.mentors.map((m) => (
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                  <img src={m.image} alt={m.name} class="w-24 h-24 rounded-full mx-auto object-cover mb-4" />
+                  <h3 class="font-semibold">{m.name}</h3>
+                  <div class="text-sm text-gray-600">{m.role}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {TEAM.core && (
+          <div>
+            <h2 class="text-2xl font-semibold mb-6">Core Team</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {TEAM.core.map((m) => (
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                  <img src={m.image} alt={m.name} class="w-20 h-20 rounded-full mx-auto object-cover mb-4" />
+                  <h3 class="font-semibold">{m.name}</h3>
+                  <div class="text-sm text-gray-600">{m.role}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {TEAM.volunteers && (
+          <div>
+            <h2 class="text-2xl font-semibold mb-6">Volunteers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+              {TEAM.volunteers.map((m) => (
+                <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+                  <div class="font-medium">{m.name}</div>
+                  <div class="text-sm text-gray-600">{m.role}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <Footer client:load />
+</Layout>

@@ -51,7 +51,9 @@ export const NAVIGATION = {
     { name: "Venue", href: "/venue" },
     { name: "Tickets", href: "/tickets" },
     { name: "Past Events", href: "/past-events" },
-    { name: "Schedule", href: "/schedule" }
+    { name: "Schedule", href: "/schedule" },
+    { name: "Sponsors", href: "/sponsors" },
+    { name: "Team", href: "/team" }
   ],
   cta: {
     text: "Register Now",
@@ -350,4 +352,130 @@ export const META = {
   ],
   author: "OpenSource Weekend",
   twitterCard: "summary_large_image"
+};
+
+export const SPONSORS = [
+  {
+    name: "Acme Labs",
+    tier: "Platinum",
+    logo: "https://placehold.co/200x80?text=Acme+Labs&bg=0d9488&color=ffffff",
+    website: "https://acme.example"
+  },
+  {
+    name: "DevTools Inc",
+    tier: "Gold",
+    logo: "https://placehold.co/200x80?text=DevTools&bg=16a34a&color=ffffff",
+    website: "https://devtools.example"
+  },
+  {
+    name: "Cloudify",
+    tier: "Silver",
+    logo: "https://placehold.co/200x80?text=Cloudify&bg=0f172a&color=ffffff",
+    website: "https://cloudify.example"
+  },
+  {
+    name: "OpenSource Community",
+    tier: "Community",
+    logo: "https://placehold.co/200x80?text=Community&bg=64748b&color=ffffff",
+    website: "https://community.example"
+  }
+];
+
+export const COMMUNITY_PARTNERS = [
+  { name: "drupal", logo: "/partners/drupal.jpg", website: "#" },
+  {
+    name: "Ahmedabad MUG",
+    logo: "/partners/Ahmedabad_MUG_LOGO_WHITE.jpg",
+    website: "#"
+  },
+  { name: "Chapter Badge", logo: "/partners/Chapter-badge.png", website: "#" },
+  {
+    name: "DevOops 1",
+    logo: "/partners/DevOops-Sticker_Logo-V2-1_page-0001.jpg",
+    website: "#"
+  },
+  {
+    name: "FlutterFlow Gandhinagar",
+    logo: "/partners/FlutterFlow Gandhinagar.png",
+    website: "#"
+  },
+  {
+    name: "GDG Cloud Ahmedabad",
+    logo: "/partners/GDG Cloud Ahmedabad.png",
+    website: "#"
+  },
+  { name: "HashicorpUG", logo: "/partners/HashicorpUG.jpg", website: "#" },
+  {
+    name: "Cloud native",
+    logo: "/partners/cloud-native.jpg",
+    website: "#"
+  },
+  {
+    name: "CNCF Gandhinagar",
+    logo: "/partners/cncf gandhinagar.jpg",
+    website: "#"
+  },
+  { name: "Elastic", logo: "/partners/elastic-logo.png", website: "#" },
+
+  { name: "gdg", logo: "/partners/gdg.png", website: "#" },
+  { name: "Wordpress", logo: "/partners/wordpress.jpg", website: "#" }
+];
+
+// Add a few extra online sponsor logos for demo
+export const EXTRA_SPONSORS = [
+  {
+    name: "Stripe",
+    logo: "https://placehold.co/200x80?text=Stripe&bg=0ea5a4&color=ffffff",
+    website: "https://stripe.com"
+  },
+  {
+    name: "Netlify",
+    logo: "https://placehold.co/200x80?text=Netlify&bg=0f172a&color=ffffff",
+    website: "https://netlify.com"
+  },
+  {
+    name: "Vercel",
+    logo: "https://placehold.co/200x80?text=Vercel&bg=111827&color=ffffff",
+    website: "https://vercel.com"
+  }
+];
+
+export const TEAM = {
+  advisory: [
+    {
+      name: "Dr. Aisha Patel",
+      role: "AI Research Scientist",
+      image:
+        "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face"
+    },
+    {
+      name: "James Wilson",
+      role: "Founder of OpenTech",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+    }
+  ],
+  mentors: [
+    {
+      name: "Lisa Zhang",
+      role: "Security Engineer",
+      image:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face"
+    }
+  ],
+  core: [
+    {
+      name: "Chavda Rohit",
+      role: "Lead Developer",
+      image:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face"
+    }
+  ],
+  volunteers: [
+    {
+      name: "Community Volunteer",
+      role: "Volunteer",
+      image: "/icons/OSDLogoNoText.svg"
+    }
+  ]
 };

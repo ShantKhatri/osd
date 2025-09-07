@@ -2,35 +2,50 @@
 import Layout from '../components/Layout.astro';
 import Navigation from '../components/Navigation.jsx';
 import Footer from '../components/Footer.jsx';
+import SponsorsGrid from '../components/SponsorsGrid.jsx';
+import { SPONSORS, COMMUNITY_PARTNERS, EXTRA_SPONSORS } from '../config.ts';
 import '../styles/global.css';
 ---
 
 <Layout title="Sponsors - Open Source Day 2025">
   <Navigation client:load />
+
   <section class="py-20 px-4 bg-white">
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-6xl mx-auto">
       <div class="text-center mb-12">
-        <img src="/icons/OSDLogo.svg" alt="Open Source Day Logo" class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-6" />
-        <h1 class="text-5xl md:text-7xl font-bold gradient-text mb-6">Our Sponsors</h1>
-        <p class="text-xl text-black max-w-3xl mx-auto">
-          Thank you to our amazing sponsors who make Open Source Day possible.
-        </p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Example sponsor card with logo -->
-        <div class="bg-gray-50 border border-green-500/20 rounded-xl p-8 flex flex-col items-center">
-          <img src="/icons/TechCorp.svg" alt="TechCorp Logo" class="w-24 h-24 mb-4 object-contain" />
-          <h2 class="text-2xl font-bold text-black mb-2">TechCorp</h2>
-          <p class="text-black text-center">Leading cloud infrastructure provider</p>
+        <div class="inline-block text-center">
+          <h1 class="text-4xl font-bold text-gray-800">Sponsors & Community Partners</h1>
+          <div class="w-32 h-1 mx-auto mt-3 rounded-full bg-gradient-to-r from-green-300 to-green-500"></div>
         </div>
-        <div class="bg-gray-50 border border-green-500/20 rounded-xl p-8 flex flex-col items-center">
-          <img src="/icons/DevToolsInc.svg" alt="DevTools Inc Logo" class="w-24 h-24 mb-4 object-contain" />
-          <h2 class="text-2xl font-bold text-black mb-2">DevTools Inc</h2>
-          <p class="text-black text-center">Developer productivity tools</p>
-        </div>
-        <!-- Add more sponsor cards as needed, using logos from public/icons -->
+        <p class="text-gray-600 mt-2">We’re grateful for the support of our partners.</p>
       </div>
+
+      <div class="mb-12">
+        <div class="flex items-center mb-6">
+          <div class="flex-1 h-px bg-gray-200"></div>
+          <div class="px-4 text-center">
+            <h2 class="text-2xl font-semibold text-gray-800 inline-block">Sponsors</h2>
+          </div>
+          <div class="flex-1 h-px bg-gray-200"></div>
+        </div>
+        <!-- temporarily show community partner images in Sponsors grid (plain images only) -->
+        <SponsorsGrid client:load sponsors={COMMUNITY_PARTNERS} columns={3} maxHeight={140} />
+      </div>
+
+      <div class="mb-8">
+        <div class="flex items-center mb-6">
+          <div class="flex-1 h-px bg-gray-200"></div>
+          <div class="px-4 text-center">
+            <h2 class="text-2xl font-semibold text-gray-800 inline-block">Community Partners</h2>
+          </div>
+          <div class="flex-1 h-px bg-gray-200"></div>
+        </div>
+        <SponsorsGrid client:load sponsors={COMMUNITY_PARTNERS} columns={6} maxHeight={140} />
+      </div>
+
+  
     </div>
   </section>
+
   <Footer client:load />
 </Layout>
