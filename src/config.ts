@@ -17,7 +17,8 @@ export const BRANDING = {
     fullWhite: "/icons/OSWFullWhite.svg",
     fullBlack: "/icons/OSWFullBlack.svg",
     white: "/icons/OSWWhite.svg",
-    black: "/icons/OSWBlack.svg"
+    black: "/icons/OSWBlack.svg",
+    green: "/icons/OSD Green.png"
   },
   colors: {
     primary: "#22c55e",
@@ -37,8 +38,8 @@ export const EVENT = {
   description:
     "Open Source Day 2025 is a community-driven event celebrating the power of open source software. Join developers, maintainers, and enthusiasts for a day of learning, collaboration, and innovation.",
   stats: {
-    expectedAttendees: "500+",
-    speakers: "5+",
+    expectedAttendees: "600+",
+    speakers: "20+",
     workshops: "15+",
     sponsors: "20+"
   }
@@ -73,15 +74,15 @@ export const SOCIAL_LINKS = {
 
 export const CONTACT = {
   title: "Contact Us",
-  email: "info@opensourceweekend.com",
-  phone: "+91 123456789",
+  email: "opensourceweekend@gmail.com ",
+  phone: "+91 8980808222, +91 8401339936",
   address: {
-    venue: "TBA",
+    venue: "VENUE - TBA",
     city: "Ahmedabad",
     state: "Gujarat",
     country: "India"
   },
-  emergencyPhone: "+1 (555) 998-0000"
+  emergencyPhone: "+91 8980808222"
 };
 
 export const HERO = {
@@ -309,10 +310,10 @@ export const TICKETS = [
 ];
 
 export const VENUE = {
-  name: "Tech Convention Center",
-  address: "1234 Innovation Drive, San Jose, CA 95110",
+  name: "Ahmedabad",
+  address: "Ahmedabad, Gujarat, India",
   description:
-    "Join us at a premium venue in the heart of the tech hub, designed for collaboration and innovation in the Indian tech ecosystem.",
+    "Ahmedabad, the vibrant heart of Gujarat, where heritage meets innovation.",
   capacity: "500+ attendees across multiple halls",
   facilities: [
     "Main auditorium with 300 seats",
@@ -324,8 +325,8 @@ export const VENUE = {
   ],
   transport: {
     parking: "Free parking available. Exit 12A from Highway 101",
-    publicTransit: "VTA Light Rail - Convention Center Station (2 min walk)",
-    airport: "25 minutes from San Jose Airport (SJC)"
+    publicTransit: "Bus and local transport options available, Train, Flights",
+    airport: "Sardar Vallabhbhai Patel International Airport (AMD)"
   }
 };
 
@@ -462,17 +463,17 @@ export const SPONSOR_TIERS = {
   gold: [
     { name: "OSCF", logo: "/icons/OSCF.png", website: "#" },
     { name: "OSW", logo: "/icons/OSDLogo.svg", website: "#" },
-    { name: "OSW", logo: "/icons/OSWFullBlack.svg", website: "#" }
+    { name: "CCSF", logo: "/icons/CCSF.png", website: "#" }
   ],
   silver: [
     { name: "OSCF", logo: "/icons/OSCF.png", website: "#" },
     { name: "OSW", logo: "/icons/OSDLogo.svg", website: "#" },
-    { name: "OSW", logo: "/icons/OSWFullBlack.svg", website: "#" }
+    { name: "CCSF", logo: "/icons/CCSF.png", website: "#" }
   ],
   bronze: [
     { name: "OSCF", logo: "/icons/OSCF.png", website: "#" },
     { name: "OSW", logo: "/icons/OSDLogo.svg", website: "#" },
-    { name: "OSW", logo: "/icons/OSWFullBlack.svg", website: "#" }
+    { name: "CCSF", logo: "/icons/CCSF.png", website: "#" }
   ]
 };
 

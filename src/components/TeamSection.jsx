@@ -4,9 +4,18 @@
 function PersonCard({ person }) {
   if (person.linkedin) {
     return (
-      <a href={person.linkedin} target="_blank" rel="noopener noreferrer" className="block h-full">
+      <a
+        href={person.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block h-full"
+      >
         <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow h-full min-h-[220px]">
-          <img src={person.image} alt={person.name} className="w-28 h-28 rounded-full object-cover mb-4" />
+          <img
+            src={person.image}
+            alt={person.name}
+            className="w-28 h-28 rounded-full object-cover mb-4"
+          />
           <div className="font-semibold">{person.name}</div>
           {person.roles ? (
             <div className="text-sm text-gray-600 mt-2">
@@ -24,7 +33,11 @@ function PersonCard({ person }) {
 
   return (
     <div className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-sm h-full min-h-[220px]">
-      <img src={person.image} alt={person.name} className="w-28 h-28 rounded-full object-cover mb-4" />
+      <img
+        src={person.image}
+        alt={person.name}
+        className="w-28 h-28 rounded-full object-cover mb-4"
+      />
       <div className="font-semibold">{person.name}</div>
       {person.roles ? (
         <div className="text-sm text-gray-600 mt-2">
