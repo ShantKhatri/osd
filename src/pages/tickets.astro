@@ -2,7 +2,7 @@
 import CountdownTimer from "@components/CountdownTimer.jsx";
 import Layout from "../components/Layout.astro";
 import Navigation from "../components/Navigation.jsx";
-import { TICKETS } from "../config.ts";
+import { TICKETS, CONTACT } from "../config.ts";
 import "../styles/global.css";
 ---
 
@@ -80,18 +80,34 @@ import "../styles/global.css";
                 ))}
               </ul>
 
-              <a
-                href={ticket.konfhubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class={`block w-full py-4 rounded-full font-bold text-lg transition-all duration-200 text-center ${
-                  ticket.popular
-                    ? "bg-green-500 hover:bg-green-400 text-black glow-effect"
-                    : "border-2 border-green-500 text-green-400 hover:bg-green-500 hover:text-black"
-                }`}
-              >
-                {ticket.available ? "Register Now" : "Sold Out"}
-              </a>
+              {
+                // If this is the micro sponsor pack, show contact mailto CTA
+                ticket.name && ticket.name.toLowerCase().includes('micro sponsor') ? (
+                  <a
+                    href={`mailto:${CONTACT.email?.trim() ?? 'opensourceweekend@gmail.com'}`}
+                    class={`block w-full py-4 rounded-full font-bold text-lg transition-all duration-200 text-center ${
+                      ticket.popular
+                        ? "bg-green-500 hover:bg-green-400 text-black glow-effect"
+                        : "border-2 border-green-500 text-green-400 hover:bg-green-500 hover:text-black"
+                    }`}
+                  >
+                    Contact Us
+                  </a>
+                ) : (
+                  <a
+                    href={ticket.konfhubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class={`block w-full py-4 rounded-full font-bold text-lg transition-all duration-200 text-center ${
+                      ticket.popular
+                        ? "bg-green-500 hover:bg-green-400 text-black glow-effect"
+                        : "border-2 border-green-500 text-green-400 hover:bg-green-500 hover:text-black"
+                    }`}
+                  >
+                    {ticket.available ? "Register Now" : "Sold Out"}
+                  </a>
+                )
+              }
             </div>
           ))
         }
