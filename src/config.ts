@@ -393,43 +393,18 @@ export const SPONSORS = [
 ];
 
 export const COMMUNITY_PARTNERS = [
-  { name: "drupal", logo: "/partners/drupal.jpg", website: "#" },
-  {
-    name: "Ahmedabad MUG",
-    logo: "/partners/Ahmedabad_MUG_LOGO_WHITE.jpg",
-    website: "#"
-  },
-  { name: "Chapter Badge", logo: "/partners/Chapter-badge.png", website: "#" },
   {
     name: "DevOops 1",
     logo: "/partners/DevOops-Sticker_Logo-V2-1_page-0001.jpg",
     website: "#"
   },
-  {
-    name: "FlutterFlow Gandhinagar",
-    logo: "/partners/FlutterFlow Gandhinagar.png",
-    website: "#"
-  },
-  {
-    name: "GDG Cloud Ahmedabad",
-    logo: "/partners/GDG Cloud Ahmedabad.png",
-    website: "#"
-  },
   { name: "HashicorpUG", logo: "/partners/HashicorpUG.jpg", website: "#" },
   {
     name: "Cloud native",
-    logo: "/partners/cloud-native.jpg",
+    logo: "/partners/CNCG Blue.png",
     website: "#"
   },
-  {
-    name: "CNCF Gandhinagar",
-    logo: "/partners/cncf gandhinagar.jpg",
-    website: "#"
-  },
-  { name: "Elastic", logo: "/partners/elastic-logo.png", website: "#" },
-
   { name: "gdg", logo: "/partners/gdg.png", website: "#" },
-  { name: "Wordpress", logo: "/partners/wordpress.jpg", website: "#" },
   {
     name: "Gdg Rajkot",
     logo: "/partners/GDG cloud rajkot SVG.svg",
@@ -448,6 +423,26 @@ export const COMMUNITY_PARTNERS = [
   {
     name: "adc",
     logo: "/partners/ADC with White BG - Ahmedabad Developer Club.jpg",
+    website: "#"
+  },
+  {
+    name: "Fluter Flow vadodara",
+    logo: "/partners/Fluter Flow vadodara.svg",
+    website: "#"
+  },
+  {
+    name: "gdg cloud gandhinagar copy",
+    logo: "/partners/gdg cloud gandhinagar copy.jpg",
+    website: "#"
+  },
+  {
+    name: "GDG Surat",
+    logo: "/partners/GDG Surat.png",
+    website: "#"
+  },
+  {
+    name: "gujarat jug - full logo",
+    logo: "/partners/gujarat jug - full logo.svg",
     website: "#"
   }
 ];
