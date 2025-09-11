@@ -1,7 +1,6 @@
 import { FOOTER, BRANDING, SITE, SOCIAL_LINKS, CONTACT } from "../config.ts";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-gray-50 border-t border-green-500/20 py-16 px-4">
