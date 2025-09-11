@@ -31,6 +31,60 @@ import RuchitPatel from "@/assets/speakers/RuchitPatel.png";
 import SantoshViswanatham from "@/assets/speakers/SantoshViswanatham.png";
 // import DishantMakwana from "@/assets/speakers/DishantMakwana.png";
 
+// Past Events Images Imports
+import OSWMay_1 from "@/assets/PastEvents/OSW-may/Image_20250504_135007_012.webp";
+import OSWMay_2 from "@/assets/PastEvents/OSW-may/Image_20250504_135007_119 (1).webp";
+import OSWMay_3 from "@/assets/PastEvents/OSW-may/Image_20250504_135007_299.webp";
+import OSWMay_4 from "@/assets/PastEvents/OSW-may/Image_20250504_135008_924 (1).webp";
+import OSWMay_5 from "@/assets/PastEvents/OSW-may/Image_20250504_135032_445.webp";
+import OSWMay_6 from "@/assets/PastEvents/OSW-may/Image_20250504_135033_071.webp";
+import OSWMay_7 from "@/assets/PastEvents/OSW-may/IMG_20250504_101248.webp";
+import OSWMay_8 from "@/assets/PastEvents/OSW-may/IMG_20250504_115928.webp";
+import OSWMay_9 from "@/assets/PastEvents/OSW-may/IMG_7570.webp";
+
+import OSWApril_1 from "@/assets/PastEvents/OSW-april/20250405_114037.webp";
+import OSWApril_2 from "@/assets/PastEvents/OSW-april/20250405_123827.webp";
+import OSWApril_3 from "@/assets/PastEvents/OSW-april/20250405_140515.webp";
+import OSWApril_4 from "@/assets/PastEvents/OSW-april/20250405_142305.webp";
+
+import OSW24_1 from "@/assets/PastEvents/OSW-24/20241013_094101.webp";
+import OSW24_2 from "@/assets/PastEvents/OSW-24/20241013_094102.webp";
+import OSW24_3 from "@/assets/PastEvents/OSW-24/20241013_094249.webp";
+import OSW24_4 from "@/assets/PastEvents/OSW-24/20241013_102037.webp";
+import OSW24_5 from "@/assets/PastEvents/OSW-24/20241013_102246.webp";
+import OSW24_6 from "@/assets/PastEvents/OSW-24/20241013_102830.webp";
+import OSW24_7 from "@/assets/PastEvents/OSW-24/20241013_103742.webp";
+import OSW24_8 from "@/assets/PastEvents/OSW-24/20241013_104148.webp";
+import OSW24_9 from "@/assets/PastEvents/OSW-24/20241013_104753.webp";
+import OSW24_10 from "@/assets/PastEvents/OSW-24/20241013_111739.webp";
+import OSW24_11 from "@/assets/PastEvents/OSW-24/20241013_112335.webp";
+import OSW24_12 from "@/assets/PastEvents/OSW-24/20241013_113256.webp";
+import OSW24_13 from "@/assets/PastEvents/OSW-24/20241013_114008.webp";
+import OSW24_14 from "@/assets/PastEvents/OSW-24/20241013_124553.webp";
+import OSW24_15 from "@/assets/PastEvents/OSW-24/20241013_131111.webp";
+
+import OSWJune23_1 from "@/assets/PastEvents/OSW-june-23/IMG20230625102644.webp";
+import OSWJune23_2 from "@/assets/PastEvents/OSW-june-23/IMG20230625121634.webp";
+import OSWJune23_3 from "@/assets/PastEvents/OSW-june-23/IMG20230625121639.webp";
+import OSWJune23_4 from "@/assets/PastEvents/OSW-june-23/IMG_7994.webp";
+import OSWJune23_5 from "@/assets/PastEvents/OSW-june-23/IMG_7995.webp";
+import OSWJune23_6 from "@/assets/PastEvents/OSW-june-23/IMG_8006.webp";
+import OSWJune23_7 from "@/assets/PastEvents/OSW-june-23/IMG_8018.webp";
+import OSWJune23_8 from "@/assets/PastEvents/OSW-june-23/IMG_8024.webp";
+import OSWJune23_9 from "@/assets/PastEvents/OSW-june-23/IMG_8033.webp";
+import OSWJune23_10 from "@/assets/PastEvents/OSW-june-23/IMG_8038.webp";
+
+import OSW23_1 from "@/assets/PastEvents/OSW-23/IMG_0759.webp";
+import OSW23_2 from "@/assets/PastEvents/OSW-23/IMG_0761.webp";
+import OSW23_3 from "@/assets/PastEvents/OSW-23/IMG_0767.webp";
+import OSW23_4 from "@/assets/PastEvents/OSW-23/IMG_0782.webp";
+import OSW23_5 from "@/assets/PastEvents/OSW-23/IMG_0787.webp";
+import OSW23_6 from "@/assets/PastEvents/OSW-23/IMG_0790.webp";
+import OSW23_7 from "@/assets/PastEvents/OSW-23/IMG_0803.webp";
+import OSW23_8 from "@/assets/PastEvents/OSW-23/IMG_0804.webp";
+import OSW23_9 from "@/assets/PastEvents/OSW-23/IMG_0806.webp";
+import OSW23_10 from "@/assets/PastEvents/OSW-23/IMG_0824.webp";
+
 export const SITE = {
   title: "OpenSourceDay 2025",
   shortTitle: "OSD2025",
@@ -391,25 +445,25 @@ export const TICKETS = [
     konfhubUrl:
       "https://konfhub.com/checkout/open-source-day-2025?ticketId=56932"
   },
-  // {
-  //   name: "Regular Ticket",
-  //   price: "₹499",
-  //   originalPrice: null,
-  //   description:
-  //     "Tickets include full-access to conference, lunch, keynotes, panels, OSD goodies.",
-  //   features: [
-  //     "Full-access to conference",
-  //     "Lunch",
-  //     "Keynotes, Panels",
-  //     "OSD Goodies",
-  //   ],
-  //   startsOn: "20th Sep 2025, 03:45 AM (GMT+05:30)",
-  //   popular: false,
-  //   available: false,
-  //   konfhubUrl:
-  //     "https://konfhub.com/checkout/open-source-day-2025?ticketId=56800",
-  //   linkText: "Coming Soon",
-  // },
+  {
+    name: "Regular Ticket",
+    price: "₹499",
+    originalPrice: null,
+    description:
+      "Tickets include full-access to conference, lunch, keynotes, panels, OSD goodies.",
+    features: [
+      "Full-access to conference",
+      "Lunch",
+      "Keynotes, Panels",
+      "OSD Goodies",
+    ],
+    startsOn: "20th Sep 2025, 03:45 AM (GMT+05:30)",
+    popular: false,
+    available: false,
+    konfhubUrl:
+      "https://konfhub.com/checkout/open-source-day-2025?ticketId=56800",
+    linkText: "Coming Soon",
+  },
   {
     name: "Open Source Day 25 + Devfest Gandhinagar 25",
     price: "₹799",
@@ -587,7 +641,7 @@ export const FOOTER = {
     { name: "Terms of Service", href: "/terms" },
     { name: "Code of Conduct", href: "/code-of-conduct" }
   ],
-  copyright: "© {year} OpenSource Weekend. All rights reserved.",
+  copyright: "© 2025 OpenSource Weekend. All rights reserved.",
   credits: "Made with ❤️ by the OSW community"
 };
 
@@ -899,77 +953,73 @@ export const PastEvent = [
     year: "2025",
     title: "Open Source Weekend - Product Collective - May 2025",
     images: [
-      "/PastEvents/OSW-may/Image_20250504_135007_012.jpeg",
-      "/PastEvents/OSW-may/Image_20250504_135007_119 (1).jpeg",
-      "/PastEvents/OSW-may/Image_20250504_135007_299.jpeg",
-      "/PastEvents/OSW-may/Image_20250504_135008_924 (1).jpeg",
-      "/PastEvents/OSW-may/Image_20250504_135032_445.jpeg",
-      "/PastEvents/OSW-may/Image_20250504_135033_071.jpeg",
-      "/PastEvents/OSW-may/IMG_20250504_101248.jpg",
-      "/PastEvents/OSW-may/IMG_20250504_115928.jpg",
-      "/PastEvents/OSW-may/IMG_7570.JPG"
+      OSWMay_1,
+      OSWMay_2,
+      OSWMay_3,
+      OSWMay_4,
+      OSWMay_5,
+      OSWMay_6,
+      OSWMay_7,
+      OSWMay_8,
+      OSWMay_9
     ]
   },
   {
     year: "2025",
     title: "OSW-Product Collective - April 2025",
-    images: [
-      "/PastEvents/OSW-april/20250405_114037.jpg",
-      "/PastEvents/OSW-april//20250405_142305.jpg",
-      "/PastEvents/OSW-april/20250405_123827.jpg",
-      "/PastEvents/OSW-april//20250405_140515.jpg"
-    ]
+    images: [OSWApril_1, OSWApril_2, OSWApril_3, OSWApril_4]
   },
   {
     year: "2024",
     title: "OSW-Day X Hacktoberfest 2024",
     images: [
-      "/PastEvents/OSW-24/20241013_094222.jpg",
-      "/PastEvents/OSW-24/20241013_094249.jpg",
-      "/PastEvents/OSW-24/20241013_102037.jpg",
-      "/PastEvents/OSW-24/20241013_102246.jpg",
-      "/PastEvents/OSW-24/20241013_102830.jpg",
-      "/PastEvents/OSW-24/20241013_103742.jpg",
-      "/PastEvents/OSW-24/20241013_104148.jpg",
-      "/PastEvents/OSW-24/20241013_104753.jpg",
-      "/PastEvents/OSW-24/20241013_111739.jpg",
-      "/PastEvents/OSW-24/20241013_112335.jpg",
-      "/PastEvents/OSW-24/20241013_113256.jpg",
-      "/PastEvents/OSW-24/20241013_114008.jpg",
-      "/PastEvents/OSW-24/20241013_124553.jpg",
-      "/PastEvents/OSW-24/20241013_131111.jpg"
+      OSW24_1,
+      OSW24_2,
+      OSW24_3,
+      OSW24_4,
+      OSW24_5,
+      OSW24_6,
+      OSW24_7,
+      OSW24_8,
+      OSW24_9,
+      OSW24_10,
+      OSW24_11,
+      OSW24_12,
+      OSW24_13,
+      OSW24_14,
+      OSW24_15
     ]
   },
   {
     year: "2023",
     title: "OSW-June 2023",
     images: [
-      "/PastEvents/OSW-june-23/IMG20230625102644.jpg",
-      "/PastEvents/OSW-june-23/IMG20230625121634.jpg",
-      "/PastEvents/OSW-june-23/IMG20230625121639.jpg",
-      "/PastEvents/OSW-june-23/IMG_7994.jpg",
-      "/PastEvents/OSW-june-23/IMG_7995.jpg",
-      "/PastEvents/OSW-june-23/IMG_8006.jpg",
-      "/PastEvents/OSW-june-23/IMG_8018.jpg",
-      "/PastEvents/OSW-june-23/IMG_8024.jpg",
-      "/PastEvents/OSW-june-23/IMG_8033.jpg",
-      "/PastEvents/OSW-june-23/IMG_8038.jpg"
+      OSWJune23_1,
+      OSWJune23_2,
+      OSWJune23_3,
+      OSWJune23_4,
+      OSWJune23_5,
+      OSWJune23_6,
+      OSWJune23_7,
+      OSWJune23_8,
+      OSWJune23_9,
+      OSWJune23_10
     ]
   },
   {
     year: "2023",
     title: "OSW-Day 2023",
     images: [
-      "/PastEvents/OSW-23/IMG_0759.jpg",
-      "/PastEvents/OSW-23/IMG_0761.jpg",
-      "/PastEvents/OSW-23/IMG_0767.jpg",
-      "/PastEvents/OSW-23/IMG_0782.jpg",
-      "/PastEvents/OSW-23/IMG_0787.jpg",
-      "/PastEvents/OSW-23/IMG_0790.jpg",
-      "/PastEvents/OSW-23/IMG_0803.jpg",
-      "/PastEvents/OSW-23/IMG_0804.jpg",
-      "/PastEvents/OSW-23/IMG_0806.jpg",
-      "/PastEvents/OSW-23/IMG_0824.jpg"
+      OSW23_1,
+      OSW23_2,
+      OSW23_3,
+      OSW23_4,
+      OSW23_5,
+      OSW23_6,
+      OSW23_7,
+      OSW23_8,
+      OSW23_9,
+      OSW23_10
     ]
   }
 ];

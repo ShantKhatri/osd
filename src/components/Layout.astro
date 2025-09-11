@@ -8,6 +8,9 @@ const {
   title,
   description = "OpenSource Weekend 2025 - Join the biggest open source event of the year",
 } = Astro.props;
+
+import Navigation from './Navigation.jsx';
+import Footer from './Footer.jsx';
 ---
 
 <!doctype html>
@@ -26,6 +29,10 @@ const {
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <Navigation client:load />
+    <main class="pt-16 md:pt-20">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>

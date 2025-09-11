@@ -1,7 +1,6 @@
 import { FOOTER, BRANDING, SITE, SOCIAL_LINKS, CONTACT } from "../config.ts";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-gray-50 border-t border-green-500/20 py-16 px-4">
@@ -155,7 +154,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-black text-sm mb-4 md:mb-0">
-            © {currentYear} {FOOTER.copyright.text}
+            {FOOTER.copyright}
           </p>
           <div className="flex space-x-6 text-sm">
             {FOOTER.legal.map((link, index) => (
