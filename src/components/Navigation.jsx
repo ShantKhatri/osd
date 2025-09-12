@@ -16,24 +16,6 @@ const Navigation = (props) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    // Simple CSS animation for navigation items
-    const navItems = document.querySelectorAll(".nav-item");
-    navItems.forEach((item, index) => {
-      item.style.opacity = "0";
-      item.style.transform = "translateY(-20px)";
-      item.style.transition = "all 0.6s ease-out";
-
-      setTimeout(
-        () => {
-          item.style.opacity = "1";
-          item.style.transform = "translateY(0)";
-        },
-        200 + index * 100
-      );
-    });
-  }, []);
-
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${

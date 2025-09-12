@@ -29,7 +29,7 @@ import Footer from './Footer.jsx';
     <title>{title}</title>
   </head>
   <body>
-    <Navigation client:load />
+    <Navigation client:only />
     <main class="pt-16 md:pt-20">
       <slot />
     </main>
