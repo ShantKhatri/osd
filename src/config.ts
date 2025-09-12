@@ -1,7 +1,7 @@
 import type { Speaker } from "@/config.types";
 
 // Team imports
-import OSDGreen from "@/assets/icons/OSDGreen.png";
+import OSDGreen from "@/assets/icons/OSDGreen.svg";
 import OSWBlack from "@/assets/icons/OSWBlack.svg";
 import BhargavPithva from "@/assets/team/BhargavPithva.webp";
 import DhananiTanvir from "@/assets/team/DhananiTanvir.webp";
@@ -92,7 +92,7 @@ export const SITE = {
     "OpenSourceDay is all about giving back to the open source projects, sharpening your skills, and celebrating all things open source. Join us for a day!",
   website: "https://osd.opensourceweekend.org",
   ogImage: "/images/OSWBlack.png",
-  icon: "@/assets/icons/OSDGreen.png",
+  icon: "@/assets/icons/OSDGreen.svg",
 };
 
 export const eventSchedule = [
@@ -200,13 +200,14 @@ export const workshopSchedule = [];
 
 export const BRANDING = {
   logos: {
-    main: OSDGreen.src,
+    main: OSDGreen,
     mainNoText: "/icons/OSDLogoNoText.svg",
     fullWhite: "/icons/OSWFullWhite.svg",
     fullBlack: "/icons/OSWFullBlack.svg",
     white: "/icons/OSWWhite.svg",
     black: "/icons/OSWBlack.svg",
-    green: OSDGreen.src,
+    green: OSDGreen,
+
   },
   colors: {
     primary: "#22c55e",
@@ -325,7 +326,7 @@ export const SPEAKERS: Speaker[] = [
     position: "Principal Solutions Architect",
     company: "Elastic",
     presentationTitle: "Open Source Journey with Elastic",
-    event: "2024 OpenSourceWeekend x HacktoberFest",
+    event: "2024 OSW × HacktoberFest",
     eventYear: 2024,
     image: AshishTiwari,
   },
@@ -334,7 +335,7 @@ export const SPEAKERS: Speaker[] = [
     position: "CTO",
     company: "IQM",
     presentationTitle: "Open Source Technologies for a SaaS at Scale",
-    event: "2024 OpenSourceWeekend x HacktoberFest",
+    event: "2024 OSW × HacktoberFest",
     eventYear: 2024,
     image: SanjayVaghela,
   },
@@ -343,7 +344,7 @@ export const SPEAKERS: Speaker[] = [
     position: "Team lead",
     company: "ViitorCloud Technologies",
     presentationTitle: "Demystifying Open Source",
-    event: "2024 OpenSourceWeekend x HacktoberFest",
+    event: "2024 OSW × HacktoberFest",
     eventYear: 2024,
     image: RuchitPatel,
   },
@@ -352,7 +353,7 @@ export const SPEAKERS: Speaker[] = [
     position: "Sr. Full Stack Developer",
     company: "IQM",
     presentationTitle: "Open Source Technologies for a SaaS at Scale",
-    event: "2024 OpenSourceWeekend x HacktoberFest",
+    event: "2024 OSW × HacktoberFest",
     eventYear: 2024,
     image: DevarshShah,
   },
@@ -362,7 +363,7 @@ export const SPEAKERS: Speaker[] = [
     company: "smartSense Consulting Solutions",
     presentationTitle:
       "How to start an Open Source Project and contribute on Github",
-    event: "2024 OpenSourceWeekend x HacktoberFest",
+    event: "2024 OSW × HacktoberFest",
     eventYear: 2024,
     image: RishangBhavsar,
   },
@@ -372,7 +373,7 @@ export const SPEAKERS: Speaker[] = [
     company: "PatternAI",
     presentationTitle:
       "Significance of Open Source Contribution and Community Engagement",
-    event: "2023 OpenSourceWeekend x HacktoberFest",
+    event: "2023 OSW × HacktoberFest",
     eventYear: 2023,
     image: KrupaGaliya,
   },
@@ -382,7 +383,7 @@ export const SPEAKERS: Speaker[] = [
     company: "ComExpo Cyber Security",
     presentationTitle:
       "How Can We Create Community Around Open Source Project And Get More Contribution",
-    event: "2023 OpenSourceWeekend x HacktoberFest",
+    event: "2023 OSW × HacktoberFest",
     eventYear: 2023,
     image: ViralParmar,
   },
@@ -391,7 +392,7 @@ export const SPEAKERS: Speaker[] = [
     position: "Principal Engineer",
     company: "Arcesium",
     presentationTitle: "Coding for Change: Hacktoberfest with Interledger",
-    event: "2023 OpenSourceWeekend x HacktoberFest",
+    event: "2023 OSW × HacktoberFest",
     eventYear: 2023,
     image: SantoshViswanatham,
   },
@@ -401,7 +402,7 @@ export const SPEAKERS: Speaker[] = [
   //   company: "EPAM Systems",
   //   presentationTitle:
   //     "Introduction to Kubernetes and How to Run Wordpress on Kubernetes",
-  //   event: "2023 OpenSourceWeekend x HacktoberFest",
+  //   event: "2023 OpenSourceWeekend × HacktoberFest",
   //   eventYear: 2023,
   //   image: "",
   // },
@@ -410,7 +411,7 @@ export const SPEAKERS: Speaker[] = [
     position: "Sr. Wordpress Engineer",
     company: "Multidots Solutions Pvt. Ltd.",
     presentationTitle: "Kickstart Your Open Source Journey with Wordpress",
-    event: "2023 OpenSourceWeekend x HacktoberFest",
+    event: "2023 OSW × HacktoberFest",
     eventYear: 2023,
     image: RonakGanatra,
   },
@@ -419,7 +420,7 @@ export const SPEAKERS: Speaker[] = [
     position: "Sr. Software Engineer",
     company: "Coda",
     presentationTitle: "Kickstart Your Open Source Journey with NodeJS",
-    event: "2023 OpenSourceWeekend x HacktoberFest",
+    event: "2023 OSW × HacktoberFest",
     eventYear: 2023,
     image: NishargShah,
   },
@@ -972,7 +973,7 @@ export const PastEvent = [
   },
   {
     year: "2024",
-    title: "OSW-Day X Hacktoberfest 2024",
+    title: "OSW-Day × Hacktoberfest 2024",
     images: [
       OSW24_1,
       OSW24_2,
