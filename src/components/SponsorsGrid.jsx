@@ -13,11 +13,11 @@ export default function SponsorsGrid({
       2: "grid-cols-2 sm:grid-cols-3 md:grid-cols-2",
       3: "grid-cols-3",
       4: "grid-cols-3 md:grid-cols-4",
-      6: "grid-cols-3 md:grid-cols-3 lg:grid-cols-6"
+      6: "grid-cols-5 md:grid-cols-5 lg:grid-cols-5"
     }[columns] || "grid-cols-3";
 
   return (
-    <div className={`grid ${baseCols} gap-6 items-center`}>
+    <div className={`grid ${baseCols} gap-4 items-center`}>
       {sponsors.map((s) => (
         <div
           key={s.name}
