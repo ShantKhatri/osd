@@ -894,6 +894,26 @@ export const COMMUNITY_PARTNERS = [
     name: "azure",
     logo: "/partners/azure-vadodara.jpeg",
     website: "#"
+  },
+  {
+    name: "AICamp.png",
+    logo: "/partners/AICamp.png",
+    website: "#"
+  },
+  {
+    name: "FFDGLogo",
+    logo: "/partners/FFDGLogo.png",
+    website: "#"
+  },
+  {
+    name: "GDG-Ahmedabad-vertical",
+    logo: "/partners/GDG-Ahmedabad-vertical.png",
+    website: "#"
+  },
+  {
+    name: "Laracon 2025",
+    logo: "/partners/Laracon 2025.png",
+    website: "#"
   }
 ];
 
