@@ -18,6 +18,8 @@ import HarshManvar from "@/assets/team/HarshManvar.webp";
 import NiravShah from "@/assets/team/NiravShah.webp";
 import PrathameshChavan from "@/assets/team/PrathameshChavan.webp";
 import RohitChavda from "@/assets/team/RohitChavda.webp";
+import SantoshYadav from "@/assets/team/SantoshYadav.webp";
+import VishalRajpurohit from "@/assets/team/VishalRajpurohit.webp";
 
 // Speaker Imports
 import SanjayVaghela from "@/assets/speakers/SanjayVaghela.png";
@@ -971,6 +973,18 @@ export const TEAM = {
       ],
       linkedin: "https://www.linkedin.com/in/nirav-eternal/",
       image: NiravShah
+    },
+    {
+      name: "Santosh Yadav",
+      roles: ["Staff Engineer at Celonis"],
+      linkedin: "https://www.linkedin.com/in/santoshyadavdev/",
+      image: SantoshYadav
+    },
+    {
+      name: "Vishal Rajpurohit",
+      roles: ["CTO at ViitorCloud", "Organizer of Laracon India"],
+      linkedin: "https://www.linkedin.com/in/vishalrajpurohit/",
+      image: VishalRajpurohit
     }
   ],
   mentors: [
