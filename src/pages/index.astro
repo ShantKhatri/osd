@@ -23,6 +23,10 @@ import { COMMUNITY_PARTNERS } from "../config.ts";
 import { Image } from "astro:assets";
 ---
 
+<head slot="head">
+  <link rel="icon" type="image/x-icon" href="/src/assets/favicon/favicon.ico" />
+</head>
+
 <Layout title="Open Source Day 2025 - Celebrate Innovation">
   <Navigation client:load activePath="/" />
   <Hero client:load />
