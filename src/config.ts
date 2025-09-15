@@ -806,8 +806,8 @@ export const COMMUNITY_PARTNERS = [
     website: "#"
   },
   {
-    name: "gdg cloud gandhinagar copy",
-    logo: "/partners/gdg cloud gandhinagar copy.jpg",
+    name: "gdg cloud gandhinagar",
+    logo: "/partners/GDG cloud gandhinagar.png",
     website: "#"
   },
   {
@@ -875,40 +875,24 @@ export const COMMUNITY_PARTNERS = [
     logo: "/partners/IT-SALES-FINAL-LOGO.png",
     website: "#"
   },
-
-  {
-    name: "Chapter Badge",
-    logo: "/partners/Chapter-badge.png",
-    website: "#"
-  },
-  {
-    name: "Ahmedabad MUG",
-    logo: "/partners/Ahmedabad_MUG_LOGO_WHITE.jpg",
-    website: "#"
-  },
-  {
-    name: "Cloud Native Gandhinagar",
-    logo: "/partners/cncf gandhinagar.jpg",
-    website: "#"
-  },
-  {
-    name: "Drupal",
-    logo: "/partners/drupal.jpg",
-    website: "#"
-  },
-  {
-    name: "Elastic",
-    logo: "/partners/elastic-logo.png",
-    website: "#"
-  },
   {
     name: "GDG Pune White BG",
     logo: "/partners/gdg_pune_logo_for_white_background.png",
     website: "#"
   },
   {
-    name: "WordPress",
-    logo: "/partners/wordpress.jpg",
+    name: "Node Ahmedabad",
+    logo: "/partners/Node Ahmedabad.jpg",
+    website: "#"
+  },
+  {
+    name: "r-user-group",
+    logo: "/partners/r-user-group.jpeg",
+    website: "#"
+  },
+  {
+    name: "azure",
+    logo: "/partners/azure-vadodara.jpeg",
     website: "#"
   }
 ];
