@@ -1472,7 +1472,7 @@ export const TEAM = {
       id: 2,
       name: "Ashish Vaghela",
       roles: ["Software Crafter"],
-      linkedin: "https://www.linkedin.com/in/rohitchavda",
+      linkedin: "https://www.linkedin.com/in/ashish-codejourney",
       image: AshishVaghela,
     },
     {
