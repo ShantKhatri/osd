@@ -118,6 +118,7 @@ import DiscordIcon from "@/assets/icons/discord.svg";
 import Mail from "@/assets/icons/mail.svg";
 import Phone from "@/assets/icons/phone.svg";
 import SOU from "@/assets/partners/Silver Oak University.png";
+import GoogleForDevelopers from "@/assets/partners/GoogleForDevelopers.png";
 
 export const SITE = {
   title: "2025 OpenSourceDay",
@@ -1012,6 +1013,12 @@ export const EVENT_PARTNER = [
     logo: "/partners/elastic.png",
     website: "#",
   },
+  {
+    id: 2,
+    name: "Google for Developers",
+    logo: GoogleForDevelopers.src,
+    website: "#",
+  },
 ];
 
 export const COMMUNITY_PARTNERS = [
@@ -1315,6 +1322,36 @@ export const COMMUNITY_PARTNERS = [
     logo: "/partners/kotlin_surat.png",
     website: "#",
   },
+  {
+    id: 51,
+    name: "AWS UG Rajkot",
+    logo: "/partners/aws_ug_rajkot.jpg",
+    website: "#",
+  },
+  {
+    id: 52,
+    name: "MumPy",
+    logo: "/partners/mumpy.png",
+    website: "#",
+  },
+  {
+    id: 53,
+    name: "Mind Maze",
+    logo: "/partners/mindmaze.jpg",
+    website: "#",
+  },
+  {
+    id: 54,
+    name: "Tech Summit",
+    logo: "/partners/tech_summit.png",
+    website: "#",
+  },
+  // {
+  //   id: 55,
+  //   name: "",
+  //   logo: "/partners/xxxxxxxx.png",
+  //   website: "#",
+  // },
 ];
 
 // Simple tier grouping for display on Home and Sponsors page.
