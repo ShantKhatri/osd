@@ -49,8 +49,10 @@ import RonakGanatra from "@/assets/speakers/RonakGanatra.png";
 import RuchitPatel from "@/assets/speakers/RuchitPatel.png";
 import SantoshViswanatham from "@/assets/speakers/SantoshViswanatham.png";
 // import DishantMakwana from "@/assets/speakers/DishantMakwana.png";
-
 import AshishPatel from "@/assets/speakers/AshishPatel.jpeg";
+import VarunPandya from "@/assets/speakers/varun_pandya.jpeg";
+import KiranTrivedi from "@/assets/speakers/kiran_trivedi.jpeg";
+import ShreyanMehta from "@/assets/speakers/shreyan_mehta.jpeg";
 
 import PersonImg from "@/assets/speakers/PersonImg.webp";
 
@@ -531,8 +533,8 @@ export const ABOUT = {
 
 export const CURRENT_SPEAKERS = [
   {
-    eventName: "Open Source with AI Workshop ",
-    date: "27 Sep 2025",
+    eventName: "Open Source with AI: Workshop",
+    date: "27th Sept 2025",
     speakers: [
       {
         name: "Ashish Patel",
@@ -543,30 +545,46 @@ export const CURRENT_SPEAKERS = [
         image: AshishPatel,
       },
       {
-        name: " Dhaval Desai",
-        position: "Community manager - Maintainer",
+        name: "Dhaval Desai",
+        position: "Community manager & Maintainer",
         company: "Gluu Inc",
         presentationTitle:
           "How to Start an Open Source Project & Manage like a Pro",
         linkedin: "https://www.linkedin.com/in/dhavaltdesai/",
         image: DhavalDesai,
       },
+      {
+        name: "Shreyan Mehta",
+        position: "CEO",
+        company: "Asambhav Solutions",
+        presentationTitle: "Let's build agents using Google adk",
+        linkedin: "https://www.linkedin.com/in/devsm/",
+        image: ShreyanMehta,
+      },
     ],
   },
   {
-    eventName: "Open Source Day 2025",
-    date: "05 Oct 2025",
+    eventName: "2025 Open Source Day",
+    date: "5th Oct",
     sections: [
       {
         title: "OSD Speakers",
         speakers: [
           {
-            name: "TBD",
-            position: "TBD",
-            company: "TBD",
-            presentationTitle: "TBD",
-            linkedin: "https://www.linkedin.com",
-            image: PersonImg,
+            name: "Kiran Trivedi",
+            position: "Professor",
+            company: "University of Wollongong Australia: India Campus",
+            presentationTitle: "Open source hardware for Tiny ML",
+            linkedin: "https://www.linkedin.com/in/krtrivedi",
+            image: KiranTrivedi,
+          },
+          {
+            name: "Varun Pandya",
+            position: "Chief Technology Officer",
+            company: "Weam",
+            presentationTitle: "Open source & AI",
+            linkedin: "https://www.linkedin.com/in/varun-pandya-1676a0103/",
+            image: VarunPandya,
           },
         ],
       },
@@ -1348,12 +1366,24 @@ export const COMMUNITY_PARTNERS = [
     logo: "/partners/tech_summit.png",
     website: "#",
   },
-  // {
-  //   id: 55,
-  //   name: "",
-  //   logo: "/partners/xxxxxxxx.png",
-  //   website: "#",
-  // },
+  {
+    id: 55,
+    name: "Flutter Flow Students Community India",
+    logo: "/partners/ffsc.svg",
+    website: "#",
+  },
+  {
+    id: 56,
+    name: "Python Pune",
+    logo: "/partners/PythonPune.svg",
+    website: "#",
+  },
+  {
+    id: 57,
+    name: "GDG on Campus: AIT",
+    logo: "/partners/gdgoc_ait.jpg",
+    website: "#",
+  },
 ];
 
 // Simple tier grouping for display on Home and Sponsors page.

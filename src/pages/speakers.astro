@@ -27,7 +27,7 @@ const pastSpeakers = SPEAKERS.filter((s) => s.eventYear < OSD_YEAR);
           <>
             <div class="my-5">
               <h2 class="text-3xl font-bold text-gray-700 mb-5 text-left">
-                {`${event.eventName} - ${event.date}`}
+                {`${event.eventName} (${event.date})`}
               </h2>
               <div class="container mx-auto px-4">
                 {event?.speakers && (
