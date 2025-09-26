@@ -54,6 +54,7 @@ import VarunPandya from "@/assets/speakers/varun_pandya.jpeg";
 import KiranTrivedi from "@/assets/speakers/kiran_trivedi.jpeg";
 import ShreyanMehta from "@/assets/speakers/shreyan_mehta.jpeg";
 import ChetanSoni from "@/assets/speakers/chetan_soni.jpg";
+import Someshwaran from "@/assets/speakers/someshwaran.png";
 
 import PersonImg from "@/assets/speakers/PersonImg.webp";
 
@@ -605,6 +606,15 @@ export const CURRENT_SPEAKERS = [
             presentationTitle: "External Secret Operator (ESO)",
             linkedin: "https://www.linkedin.com/in/sonichetan/",
             image: ChetanSoni,
+          },
+          {
+            name: "Someshwaran Mohan Kumar",
+            position: "Developer Advocate",
+            company: "Elastic India",
+            presentationTitle:
+              "From Guesswork to Flamegraphs: eBPF Profiling with DevFiler",
+            linkedin: "https://www.linkedin.com/in/somdevsupport/",
+            image: Someshwaran,
           },
         ],
       },
