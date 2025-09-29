@@ -1477,6 +1477,42 @@ export const COMMUNITY_PARTNERS = [
     logo: "/partners/gdgoc_ait.jpg",
     website: "#",
   },
+  {
+    id: 58,
+    name: "Docker Ahmedabad",
+    logo: "/partners/docker_ahmedabad.png",
+    website: "#",
+  },
+  {
+    id: 59,
+    name: "CNCG Surat",
+    logo: "/partners/cncg_surat.png",
+    website: "#",
+  },
+  {
+    id: 60,
+    name: "GDG on Campus: Silver Oak University",
+    logo: "/partners/gdgoc_silver_oak.jpg",
+    website: "#",
+  },
+  {
+    id: 61,
+    name: "IEEE Silver Oak University",
+    logo: "/partners/ieee_sou.png",
+    website: "#",
+  },
+  {
+    id: 62,
+    name: "Web 3 Ahmedabad Community",
+    logo: "/partners/web3_ahmedabad.png",
+    website: "#",
+  },
+  {
+    id: 63,
+    name: "FOSS United",
+    logo: "/partners/FOSS_United.png",
+    website: "#",
+  },
 ];
 
 // Simple tier grouping for display on Home and Sponsors page.
