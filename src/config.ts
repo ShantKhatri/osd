@@ -1581,6 +1581,12 @@ export const COMMUNITY_PARTNERS = [
     logo: "/partners/gdg_mumbai.png",
     website: "#",
   },
+  {
+    id: 65,
+    name: "AWS Cloud Club: Silver Oak University",
+    logo: "/partners/aws_cloud_club_sou.png",
+    website: "#",
+  },
 ];
 
 // Simple tier grouping for display on Home and Sponsors page.
