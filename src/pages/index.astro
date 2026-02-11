@@ -1,491 +1,82 @@
 ---
-import { Image } from "astro:assets";
-
-import CountdownTimer from "@/components/CountdownTimer.jsx";
-import Counter from "@/components/Counter";
-import Hero from "@/components/Hero.jsx";
-import ScrollAnimations from "@/components/ScrollAnimations.jsx";
-import SponsorsGrid from "@/components/SponsorsGrid.jsx";
 import Layout from "@/layouts/Layout.astro";
-import "@/styles/global.css";
-import MarqueeLogos from "../components/MarqueeLogos.jsx";
+import { BRANDING } from "@/config/2025/config";
+import { Image } from "astro:assets";
+import "@/styles/2025/global.css";
 
-import Celebrate from "@/assets/icons/celebrate.svg";
-import Connect from "@/assets/icons/connect.svg";
-import LearnAndContribute from "@/assets/icons/learn-contribute.svg";
-
-import {
-  BRANDING,
-  COMMUNITY_PARTNERS,
-  EVENT_PARTNER,
-  OUR_SPEAKERS,
-  SPONSOR_TIERS,
-  TICKETS,
-  VENUE,
-  VENUE_PARTNER,
-} from "../config.ts";
+// This is the root landing page for the site
 ---
 
-<Layout title="2025 OpenSourceDay" activePath="/">
-  <Hero client:load />
-  <ScrollAnimations client:load />
+<Layout title="Open Source Day 2026 — Stay Alert" activePath="/">
+  <div class="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+    <!-- Animated Background Blobs -->
+    <!-- <div class="absolute top-0 -left-4 w-72 h-72 bg-green-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div> -->
+    <div class="absolute top-0 -right-4 w-72 h-72 bg-emerald-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+    <div class="absolute -bottom-8 left-20 w-72 h-72 bg-teal-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+      <div class="flex flex-col items-center mb-12 animate-fade-in-up">
+        <!-- Logo Wrapper -->
+        <div class="relative mb-8">
+          <div class="absolute inset-0 bg-green-200/40 blur-3xl rounded-full"></div>
+          <div class="relative p-5 bg-white rounded-[2.5rem]  border-green-100">
+            <Image
+              src={BRANDING.logos.main}
+              alt="Open Source Day"
+              class="w-28 h-28 md:w-32 md:h-32"
+              loading="eager"
+            />
+          </div>
+        </div>
+        
+        <!-- Status Indicator -->
+        <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-green-50 text-green-700 text-sm font-bold border border-green-100 mb-8 animate-pulse shadow-sm">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+          </span>
+          <span>STAY ALERT</span>
+        </div>
 
-  <!-- Countdown appears here -->
-  <div class="mt-4 py-10 px-4 bg-gradient-to-r from-green-50 to-green-100">
-    <div class="max-w-5xl mx-auto text-center">
-      <CountdownTimer client:load />
+        <h1 class="text-6xl md:text-8xl font-black tracking-tight mb-6">
+          <span class="block text-gray-900">OSD 2026</span>
+          <span class="gradient-text italic">IS COMING.</span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed">
+          The next chapter of the ultimate Open Source celebration is being architected. 
+          Prepare for something bigger, faster, and more impactful than ever before.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <a
+            href="/2025/"
+            class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-200 bg-gray-900 font-pj rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 hover:scale-105"
+          >
+            Explore 2025 Event
+            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+        
+        </div>
+      </div>
+
+      <!-- Tech Stack Icons / Partners placeholders if needed -->
+      <div class="mt-20 pt-10 border-t border-gray-100 flex flex-wrap justify-center gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+        <div class="text-2xl font-bold text-gray-400">#OSD2026</div>
+        <div class="text-2xl font-bold text-gray-400">#OpenSource</div>
+        <div class="text-2xl font-bold text-gray-400">#ComingSoon</div>
+      </div>
     </div>
   </div>
-
-  <!-- About Section -->
-  <section class="py-20 px-4 bg-gradient-to-r from-green-50 to-green-100">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16 animate-fade-up">
-        <div class="mb-8 flex justify-center">
-          <Image
-            src={BRANDING.logos.main}
-            alt="Open Source Day Logo"
-            class="w-16 h-16 md:w-20 md:h-20"
-            loading="eager"
-          />
-        </div>
-        <h2 class="text-4xl md:text-6xl font-bold gradient-text mb-6">
-          About Open Source Day
-        </h2>
-        <p class="text-xl text-black max-w-3xl mx-auto">
-          Open Source Day 2025 is a community-driven event celebrating the power
-          of open source software. Join developers, maintainers, and enthusiasts
-          for a day of learning, collaboration, and innovation.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div
-          class="light-card p-8 rounded-xl transition-all duration-300 animate-stagger"
-        >
-          <div
-            class="w-12 h-12 bg-green-500 rounded-lg mb-6 flex items-center justify-center"
-          >
-            <LearnAndContribute />
-          </div>
-          <h3 class="text-2xl font-bold text-black mb-4">Learn & Contribute</h3>
-          <p class="text-black">
-            Discover new technologies, learn best practices, and get hands-on
-            experience contributing to real open source projects.
-          </p>
-        </div>
-
-        <div
-          class="light-card p-8 rounded-xl transition-all duration-300 animate-stagger"
-        >
-          <div
-            class="w-12 h-12 bg-green-500 rounded-lg mb-6 flex items-center justify-center"
-          >
-            <Connect />
-          </div>
-          <h3 class="text-2xl font-bold text-black mb-4">Connect</h3>
-          <p class="text-black">
-            Network with fellow developers, open source maintainers, and tech
-            enthusiasts from the Indian tech community.
-          </p>
-        </div>
-
-        <div
-          class="light-card p-8 rounded-xl transition-all duration-300 animate-stagger"
-        >
-          <div
-            class="w-12 h-12 bg-green-500 rounded-lg mb-6 flex items-center justify-center"
-          >
-            <Celebrate />
-          </div>
-          <h3 class="text-2xl font-bold text-black mb-4">Celebrate</h3>
-          <p class="text-black">
-            Celebrate the achievements of the open source community and discover
-            exciting new projects and opportunities.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats Section moved to bottom -->
-
-  <!-- CTA Section -->
-  <section class="py-20 px-4 bg-white">
-    <div class="max-w-4xl mx-auto text-center animate-fade-up">
-      <h2 class="text-4xl md:text-5xl font-bold text-black mb-6">
-        Ready to Join Us?
-      </h2>
-      <p class="text-xl text-black mb-8">
-        Don't miss out on this amazing open source community event. Join us on
-        WhatsApp now!
-      </p>
-      <a
-        href="https://chat.whatsapp.com/Fi50G9prGcH4b7891LrPir"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-block bg-green-500 hover:bg-green-400 text-white px-12 py-4 rounded-full font-bold text-xl transition-all duration-200 glow-effect hover:scale-105 transform"
-      >
-        Join now
-      </a>
-    </div>
-  </section>
-
-  <section class="py-20 px-4 bg-gradient-to-r from-green-50 to-green-100">
-    <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-4xl md:text-5xl font-bold text-black mb-16">
-        Impact in Progress
-      </h2>
-      <div class="grid grid-cols-2 md:grid-cols-7 gap-8 mb-8">
-        <div class="flex flex-col items-center">
-          <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">
-            <Counter target={600} client:visible />+
-          </div>
-          <div class="text-black">Expected Attendees</div>
-        </div>
-
-        <div class="flex flex-col items-center">
-          <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">
-            <Counter target={70} client:visible />+
-          </div>
-          <div class="text-black">Community Partners</div>
-        </div>
-
-        <div class="flex flex-col items-center">
-          <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">
-            <Counter target={20} client:visible />+
-          </div>
-          <div class="text-black">Expert Speakers</div>
-        </div>
-
-        <div class="flex flex-col items-center">
-          <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">
-            <Counter target={12} client:visible />+
-          </div>
-          <div class="text-black">Technical Sessions</div>
-        </div>
-
-        <div class="flex flex-col items-center">
-          <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">
-            <Counter target={2} client:visible />+
-          </div>
-          <div class="text-black">Panel Discussion</div>
-        </div>
-
-        <div class="flex flex-col items-center">
-          <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">
-            <Counter target={5} client:visible />
-          </div>
-          <div class="text-black">Workshop</div>
-        </div>
-
-        <div class="flex flex-col items-center">
-          <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">
-            <Counter target={100} client:visible />
-          </div>
-          <div class="text-black">Projects Created on Github</div>
-        </div>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-8 w-fit mx-auto">
-        <div class="flex flex-col items-center">
-          <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">
-            <Counter target={200} client:visible />
-          </div>
-          <div class="text-black">Project Forked</div>
-        </div>
-
-        <div class="flex flex-col items-center">
-          <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">
-            <Counter target={300} client:visible />
-          </div>
-          <div class="text-black">Pull Request</div>
-        </div>
-
-        <div class="flex flex-col items-center">
-          <div class="text-4xl md:text-6xl font-bold gradient-text mb-2">
-            <Counter target={2} client:visible />
-          </div>
-          <div class="text-black">Full Day Event</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sponsors Preview -->
-  <section class="py-20 px-4 bg-white">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-12 animate-fade-up">
-        <h2 class="text-3xl md:text-4xl font-bold">
-          Sponsors & Community Partners
-        </h2>
-        <p class="text-gray-600 mt-2">
-          Thank you to our partners who make this event possible.
-        </p>
-      </div>
-    </div>
-
-    <!-- Sponsors preview grid (limit to 9 items -> 3 columns => 2-3 rows) -->
-    <div class="w-full">
-      <!-- Tiered Sponsors Preview -->
-      <div class="py-6 bg-white">
-        <!-- Platinum / Gold -->
-        <div class="max-w-6xl mx-auto px-4 mb-6">
-          <div class="mb-4 text-center">
-            <h4 class="text-xl font-semibold text-gray-800 inline-block mr-2">
-              Gold Sponsors
-            </h4>
-            <span
-              class="inline-block align-middle bg-green-100 text-green-700 text-sm px-2 py-1 rounded-full"
-              >Top</span
-            >
-
-            <div
-              class="w-24 h-1 mx-auto mt-3 rounded-full bg-gradient-to-r from-yellow-200 to-yellow-400 opacity-80"
-            >
-            </div>
-          </div>
-          <SponsorsGrid
-            client:load
-            sponsors={SPONSOR_TIERS.gold.slice(0, 3)}
-            columns={3}
-            maxHeight={120}
-          />
-        </div>
-
-        <!-- Event Partner -->
-        <div class="max-w-6xl mx-auto px-4">
-          <div class="mb-4 text-center">
-            <h4 class="text-xl font-semibold text-gray-800 inline-block mr-2">
-              Event Partner
-            </h4>
-            <div
-              class="w-24 h-1 mx-auto mt-3 rounded-full bg-gradient-to-r from-green-300 to-green-500 opacity-90"
-            >
-            </div>
-          </div>
-          <SponsorsGrid
-            client:load
-            sponsors={EVENT_PARTNER}
-            columns={EVENT_PARTNER.length}
-            maxHeight={100}
-          />
-        </div>
-      </div>
-
-      <!-- Venue partner -->
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="mb-4 text-center">
-          <h4 class="text-xl font-semibold text-gray-800 inline-block mr-2">
-            Venue Partner
-          </h4>
-
-          <div
-            class="w-24 h-1 mx-auto mt-3 rounded-full bg-gradient-to-r from-green-200 to-green-400 opacity-80"
-          >
-          </div>
-        </div>
-        <SponsorsGrid
-          client:load
-          sponsors={VENUE_PARTNER}
-          columns={1}
-          maxHeight={100}
-        />
-      </div>
-    </div>
-
-    <div class="py-8 bg-white">
-      <div class="max-w-6xl mx-auto px-4 mb-2 text-center">
-        <h3 class="text-lg font-semibold mb-2 text-gray-800">
-          Community Partners
-        </h3>
-        <div
-          class="w-24 h-1 mx-auto mt-2 rounded-full bg-gradient-to-r from-green-200 to-green-400"
-        >
-        </div>
-      </div>
-      <div class="w-full">
-        <MarqueeLogos
-          client:load
-          logos={COMMUNITY_PARTNERS}
-          duration={120}
-          height={140}
-          itemMinWidth={260}
-        />
-      </div>
-    </div>
-
-    <div class="text-center mt-4 py-4">
-      <a href="/sponsors" class="text-green-600 font-semibold hover:underline"
-        >See all the sponsors and partners</a
-      >
-    </div>
-
-    <!-- Past Speakers Preview -->
-    <!-- <div class="py-12 bg-green-50">
-      <div class="max-w-6xl mx-auto px-4 text-center mb-6">
-        <h3 class="text-2xl font-bold">Past Speakers</h3>
-      </div>
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-          {
-            SPEAKERS.slice(0, 3).map((sp) => (
-              <div class="bg-white p-6 rounded-lg shadow-sm text-center">
-                <Image
-                  src={sp.image}
-                  alt={sp.name}
-                  class="w-24 h-24 rounded-full mx-auto object-cover mb-4"
-                  loading="lazy"
-                  width={400}
-                />
-                <h4 class="font-semibold text-lg">{sp.name}</h4>
-                <div class="text-sm text-gray-600 mb-2">
-                  {sp.position} at {sp.company}
-                </div>
-                <p class="text-sm text-gray-700">{sp.presentationTitle}</p>
-              </div>
-            ))
-          }
-        </div>
-
-        {
-          SPEAKERS.length > 3 && (
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {SPEAKERS.slice(3).map((sp) => (
-                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
-                  <Image
-                    src={sp.image}
-                    alt={sp.name}
-                    class="w-24 h-24 rounded-full mx-auto object-cover mb-4"
-                    loading="lazy"
-                    width={400}
-                  />
-                  <h4 class="font-semibold text-lg">{sp.name}</h4>
-                  <div class="text-sm text-gray-600 mb-2">
-                    {sp.position} at {sp.company}
-                  </div>
-                  <p class="text-sm text-gray-700">{sp.presentationTitle}</p>
-                </div>
-              ))}
-            </div>
-          )
-        }
-      </div>
-    </div> -->
-
-    <!-- Current Speakers Preview -->
-    <div class="py-12 bg-green-50">
-      <div class="max-w-6xl mx-auto px-4 text-center mb-6">
-        <h3 class="text-2xl font-bold">Our Speakers</h3>
-      </div>
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-6">
-          {
-            OUR_SPEAKERS.map((sp) => (
-              <div class="bg-white p-6 rounded-lg shadow-sm text-center">
-                <Image
-                  src={sp.image}
-                  alt={sp.name}
-                  class="w-24 h-24 rounded-full mx-auto object-cover object-top mb-4"
-                  loading="lazy"
-                  width={400}
-                />
-                <h4 class="font-semibold text-lg">{sp.name}</h4>
-                <div class="text-sm text-gray-600 mb-2">
-                  {sp.position} at {sp.company}
-                </div>
-                {Boolean(sp?.presentationTitle) && (
-                  <p class="text-sm text-gray-700">{sp.presentationTitle}</p>
-                )}
-              </div>
-            ))
-          }
-        </div>
-
-        <!-- {
-          SPEAKERS.length > 3 && (
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {SPEAKERS.slice(3).map((sp) => (
-                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
-                  <Image
-                    src={sp.image}
-                    alt={sp.name}
-                    class="w-24 h-24 rounded-full mx-auto object-cover mb-4"
-                    loading="lazy"
-                    width={400}
-                  />
-                  <h4 class="font-semibold text-lg">{sp.name}</h4>
-                  <div class="text-sm text-gray-600 mb-2">
-                    {sp.position} at {sp.company}
-                  </div>
-                  <p class="text-sm text-gray-700">{sp.presentationTitle}</p>
-                </div>
-              ))}
-            </div>
-          )
-        } -->
-      </div>
-    </div>
-    <!-- Venue & Tickets -->
-    <div class="py-8 bg-white">
-      <div
-        class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-start"
-      >
-        <div class="bg-green-50 p-6 rounded-lg">
-          <h3 class="text-xl font-bold mb-2">Venue</h3>
-          <div class="text-gray-700 text-2xl font-bold mb-4">
-            {VENUE.name}
-          </div>
-          <div class="text-gray-600">{VENUE.address}</div>
-          <a
-            href={VENUE.googleMapsLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="block mt-4 text-center bg-green-500 hover:bg-green-400 text-white px-12 py-4 rounded-full font-bold text-xl transition-all duration-200 glow-effect hover:scale-105 transform"
-          >
-            Google Maps
-          </a>
-        </div>
-
-        <div class="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-lg">
-          <h3 class="text-xl font-bold mb-2">Tickets</h3>
-          <div class="grid grid-cols-1 gap-4">
-            {
-              TICKETS.slice(0, 2).map((t) => (
-                <div class="bg-white p-4 rounded-lg flex justify-between items-center">
-                  <div>
-                    <div class="font-semibold">{t.name}</div>
-                    <div class="text-sm text-gray-600">{t.description}</div>
-                  </div>
-                  <div class="text-right">
-                    <div class="font-bold">{t.price}</div>
-                    <a
-                      class="text-sm text-green-600"
-                      href={t.konfhubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Buy
-                    </a>
-                  </div>
-                </div>
-              ))
-            }
-
-            {
-              TICKETS.length > 2 && (
-                <div class="mt-2 text-center">
-                  <a
-                    href="/tickets"
-                    class="inline-block text-green-700 px-4 py-2 rounded text-sm font-medium"
-                  >
-                    View more tickets
-                  </a>
-                </div>
-              )
-            }
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 </Layout>
+
+<style>
+  /* Custom extra styles for the futuristic feel */
+  .gradient-text {
+    background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>

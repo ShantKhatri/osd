@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BRANDING, NAVIGATION, SITE } from "../config.ts";
+import { BRANDING, NAVIGATION, SITE } from "@/config/2025/config";
 
 const Navigation = (props) => {
   const { activePath = "" } = props;
@@ -27,7 +27,7 @@ const Navigation = (props) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 md:h-20">
           <div className="nav-item flex items-center">
-            <a href="/" className="flex items-center">
+            <a href="/2025" className="flex items-center">
               <img
                 src={BRANDING.logos.main.src}
                 alt="OSW Logo"
@@ -128,7 +128,7 @@ const Navigation = (props) => {
               ))}
 
               <a
-                href="/gallery"
+                href="/2025/gallery"
                 className="block mx-3 mt-4 bg-green-500 hover:bg-green-400 text-white px-6 py-2 rounded-full font-semibold text-center transition-all duration-200"
                 onClick={() => setIsOpen(false)}
               >

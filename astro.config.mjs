@@ -11,6 +11,9 @@ export default defineConfig({
   vite: {
     // @ts-ignore
     plugins: [tailwindcss()],
+    ssr: {
+      noExternal: ["react-easy-crop", "tslib"],
+    },
   },
   server: {
     allowedHosts: [

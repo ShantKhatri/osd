@@ -2,10 +2,10 @@
 import { Image } from "astro:assets";
 
 import Layout from "@/layouts/Layout.astro";
-import Heading from "@components/Heading.astro";
-import "@/styles/global.css";
+import Heading from "@components/2025/Heading.astro";
+import "@/styles/2025/global.css";
 
-import { TEAM } from "@/config.ts";
+import { TEAM } from "@/config/2025/config";
 
 // Helper: normalize roles to an array and safely read linkedin
 const getRoles = (m: any): string[] => {
@@ -19,7 +19,7 @@ const getLinkedin = (m: any): string | null => {
 };
 ---
 
-<Layout title="Team — 2025 OSD" activePath="/team">
+<Layout title="Team — 2025 OSD" activePath="/2025/team">
   <!-- Heading Section -->
   <Heading
     title="Our Team"

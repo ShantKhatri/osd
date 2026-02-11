@@ -1,4 +1,4 @@
-import { FOOTER, BRANDING, SITE, SOCIAL_LINKS, CONTACT } from "../config.ts";
+import { FOOTER, BRANDING, SITE, SOCIAL_LINKS, CONTACT } from "@/config/2025/config";
 import PhoneIcon from "@/assets/icons/phone.svg";
 import MailIcon from "@/assets/icons/mail.svg";
 import LocationIcon from "@/assets/icons/location.svg";

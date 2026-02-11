@@ -1,10 +1,10 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import "@/styles/global.css";
-import AddToGoogleCalendar from "@components/AddToGoogleCalendar";
-import Heading from "@components/Heading.astro";
+import "@/styles/2025/global.css";
+import AddToGoogleCalendar from "@components/2025/AddToGoogleCalendar";
+import Heading from "@components/2025/Heading.astro";
 
-import { eventSchedule, fullEvent, workshopSchedule } from "@/config";
+import { eventSchedule, fullEvent, workshopSchedule } from "@/config/2025/config";
 
 const getTypeColor = (type: string) => {
   const colorMap: Record<string, string> = {
@@ -25,7 +25,7 @@ const getTypeColor = (type: string) => {
 };
 ---
 
-<Layout title="Schedule — 2025 OSD" activePath="/schedule">
+<Layout title="Schedule — 2025 OSD" activePath="/2025/schedule">
   <!-- Heading Section -->
   <Heading
     title="Event Schedule"

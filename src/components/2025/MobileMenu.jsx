@@ -50,12 +50,12 @@ const MobileMenu = ({ isOpen, onClose }) => {
 
         <nav className="space-y-4">
           {[
-            { name: "Home", href: "/" },
-            { name: "Speakers", href: "/speakers" },
-            { name: "Schedule", href: "/schedule" },
-            { name: "Venue", href: "/venue" },
-            { name: "Tickets", href: "/tickets" },
-            { name: "Past Events", href: "/past-events" },
+            { name: "Home", href: "/2025" },
+            { name: "Speakers", href: "/2025/speakers" },
+            { name: "Schedule", href: "/2025/schedule" },
+            { name: "Venue", href: "/2025/venue" },
+            { name: "Tickets", href: "/2025/tickets" },
+            { name: "Past Events", href: "/2025/past-events" },
           ].map((item, _index) => (
             <a
               key={item.name}
@@ -69,9 +69,9 @@ const MobileMenu = ({ isOpen, onClose }) => {
 
           <div className="pt-6 border-t border-gray-700">
             <a
-              href="/gallery"
+              href="/2025/gallery"
               className="block mx-3 mt-4 bg-green-500 hover:bg-green-400 text-white px-6 py-2 rounded-full font-semibold text-center transition-all duration-200"
-              onClick={() => setIsOpen(false)}
+              onClick={onClose}
             >
               Gallery
             </a>

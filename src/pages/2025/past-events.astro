@@ -2,10 +2,10 @@
 import { Image } from "astro:assets";
 
 import Layout from "@/layouts/Layout.astro";
-import Heading from "@components/Heading.astro";
-import "@/styles/global.css";
+import Heading from "@components/2025/Heading.astro";
+import "@/styles/2025/global.css";
 
-import { PastEvent } from "@/config";
+import { PastEvent } from "@/config/2025/config";
 
 // const pastEvents = [
 //   {
@@ -65,7 +65,7 @@ import { PastEvent } from "@/config";
 // ];
 ---
 
-<Layout title="Past Events — 2025 OSD" activePath="/past-events">
+<Layout title="Past Events — 2025 OSD" activePath="/2025/past-events">
   <!-- Heading Section -->
   <Heading
     title="Past Events"

@@ -1,18 +1,18 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import SponsorsGrid from "@/components/SponsorsGrid.jsx";
-import Heading from "@components/Heading.astro";
-import "@/styles/global.css";
+import SponsorsGrid from "@/components/2025/SponsorsGrid.jsx";
+import Heading from "@components/2025/Heading.astro";
+import "@/styles/2025/global.css";
 
 import {
   VENUE_PARTNER,
 COMMUNITY_PARTNERS,
 SPONSOR_TIERS,
   EVENT_PARTNER,
-} from "@/config.ts";
+} from "@/config/2025/config";
 ---
 
-<Layout title="Sponsors — 2025 OSD" activePath="/sponsors">
+<Layout title="Sponsors — 2025 OSD" activePath="/2025/sponsors">
   <!-- Heading Section -->
   <Heading
     title="Sponsors & Community Partners"

@@ -1,13 +1,13 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { BRANDING } from "@/config.ts";
+import { BRANDING } from "@/config/2025/config";
 import { Image } from "astro:assets";
-import "@/styles/global.css";
+import "@/styles/2025/global.css";
 
 Astro.response.status = 404;
 ---
 
-<Layout title="Page Not Found — 2025 OSD" activePath="/404">
+<Layout title="Page Not Found — 2025 OSD" activePath="/2025/404">
   <section class="relative px-4 py-5 md:py-12 overflow-hidden leaf-bg">
     <div class="absolute inset-0 pointer-events-none">
       <div class="floating-leaf floating-leaf-1"></div>
@@ -36,19 +36,19 @@ Astro.response.status = 404;
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
-          href="/"
+          href="/2025/"
           class="inline-block bg-green-500 hover:bg-green-400 text-white px-8 py-4 rounded-full font-bold transition-all duration-200 glow-effect hover:scale-105"
         >
           Go Home
         </a>
         <a
-          href="/schedule"
+          href="/2025/schedule"
           class="inline-block bg-white text-green-700 border border-green-300 px-8 py-4 rounded-full font-semibold hover:bg-green-50 transition-all"
         >
           View Schedule
         </a>
         <a
-          href="/tickets"
+          href="/2025/tickets"
           class="inline-block bg-white text-green-700 border border-green-300 px-8 py-4 rounded-full font-semibold hover:bg-green-50 transition-all"
         >
           Get Tickets
@@ -57,11 +57,11 @@ Astro.response.status = 404;
 
       <div class="mt-12 text-gray-600">
         <span class="pr-5">Or explore:</span>
-        <a href="/speakers" class="text-green-700 hover:underline">Speakers</a>
+        <a href="/2025/speakers" class="text-green-700 hover:underline">Speakers</a>
         <span class="mx-2">·</span>
-        <a href="/sponsors" class="text-green-700 hover:underline">Sponsors</a>
+        <a href="/2025/sponsors" class="text-green-700 hover:underline">Sponsors</a>
         <span class="mx-2">·</span>
-        <a href="/past-events" class="text-green-700 hover:underline"
+        <a href="/2025/past-events" class="text-green-700 hover:underline"
           >Past Events</a
         >
       </div>

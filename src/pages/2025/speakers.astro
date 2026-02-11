@@ -1,10 +1,10 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Heading from "@components/Heading.astro";
-import SpeakerCard from "@components/SpeakerCard.astro";
-import "@/styles/global.css";
+import Heading from "@components/2025/Heading.astro";
+import SpeakerCard from "@components/2025/SpeakerCard.astro";
+import "@/styles/2025/global.css";
 
-import { SPEAKERS, CURRENT_SPEAKERS } from "@/config.ts";
+import { SPEAKERS, CURRENT_SPEAKERS } from "@/config/2025/config";
 
 const OSD_YEAR = 2025;
 
@@ -12,7 +12,7 @@ const OSD_YEAR = 2025;
 const pastSpeakers = SPEAKERS.filter((s) => s.eventYear < OSD_YEAR);
 ---
 
-<Layout title="Speakers — 2025 OSD" activePath="/speakers">
+<Layout title="Speakers — 2025 OSD" activePath="/2025/speakers">
   <!-- Heading Section -->
   <Heading title="Our Speakers" description="" />
 

@@ -1,13 +1,13 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import Heading from "@components/Heading.astro";
-import CountdownTimer from "@components/CountdownTimer.jsx";
-import "@/styles/global.css";
+import Heading from "@components/2025/Heading.astro";
+import CountdownTimer from "@components/2025/CountdownTimer";
+import "@/styles/2025/global.css";
 
-import { TICKETS, eventEnded } from "@/config.ts";
+import { TICKETS, eventEnded } from "@/config/2025/config";
 ---
 
-<Layout title="Tickets — 2025 OSD" activePath="/tickets">
+<Layout title="Tickets — 2025 OSD" activePath="/2025/tickets">
   <!-- Heading Section -->
   <Heading title="Get Your Tickets" description="" />
 

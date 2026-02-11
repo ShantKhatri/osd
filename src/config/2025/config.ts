@@ -1,90 +1,90 @@
-import type { Speaker } from "@/config.types";
+import type { Speaker } from "@/config/2025/config.types";
 
 // Team imports
 import OSDGreen from "@/assets/icons/OSDGreen.svg";
 import OSWBlack from "@/assets/icons/OSWBlack.svg";
-import AbhishekSingh from "@/assets/team/AbhishekSingh.jpg";
-import AmitRana from "@/assets/team/AmitRana.jpg";
-import AshishTiwari from "@/assets/team/AshishTiwari.webp";
-import AshishVaghela from "@/assets/team/AshishVaghela.png";
-import AshishZapadiya from "@/assets/team/AshishZapadiya.jpg";
-import BharatMakwana from "@/assets/team/BharatMakwana.webp";
-import BhargavPithva from "@/assets/team/BhargavPithva.webp";
-import BirajDesai from "@/assets/team/BirajDesai.jpg";
-import DarshilVyas from "@/assets/team/DarshilVyas.jpg";
-import DhananiTanvir from "@/assets/team/DhananiTanvir.webp";
-import DhavalDesai from "@/assets/team/DhavalDesai.webp";
-import DhwanitMistry from "@/assets/team/DhwanitMistry.jpg";
-import DilipLuhar from "@/assets/team/DilipLuhar.jpg";
-import EktaAgja from "@/assets/team/EktaAgja.jpg";
-import FalgunBhalsod from "@/assets/team/FalgunBhalsod.webp";
-import FennySheth from "@/assets/team/FennySheth.png";
-import HarshilShah from "@/assets/team/HarshilShah.jpg";
-import HarshManvar from "@/assets/team/HarshManvar.webp";
-import HarshParekh from "@/assets/team/HarshParekh.jpg";
-import Harshpatel from "@/assets/team/Harshpatel.jpg";
-import JayDobariya from "@/assets/team/JayDobariya.jpg";
-import JayrajRathod from "@/assets/team/JayrajRathod.jpg";
-import JigneshGadhavi from "@/assets/team/JigneshGadhavi.webp";
-import KajalSangani from "@/assets/team/KajalSangani.jpeg";
-import KrishSatasiya from "@/assets/team/KrishSatasiya.png";
-import KunjanAtara from "@/assets/team/KunjanAtara.jpg";
-import MeetRaval from "@/assets/team/MeetRaval.jpg";
-import MehulPatel from "@/assets/team/MehulPatel.webp";
-import NeelShah from "@/assets/team/NeelShah.webp";
-import NiravShah from "@/assets/team/NiravShah.webp";
-import PranjalSingh from "@/assets/team/PranjalSingh.jpg";
-import PrashantBhavsar from "@/assets/team/PrashantBhavsar.webp";
-import PrathameshChavan from "@/assets/team/PrathameshChavan.webp";
-import PratikPopat from "@/assets/team/PratikPopat.jpeg";
-import RinkeshBansal from "@/assets/team/RinkeshBansal.webp";
-import RohitChavda from "@/assets/team/RohitChavda.webp";
-import RonitGandhi from "@/assets/team/RonitGandhi.jpg";
-import RutviPatel from "@/assets/team/RutviPatel.jpg";
-import SanketTank from "@/assets/team/SanketTank.jpg";
-import ShabbirAli from "@/assets/team/ShabbirAli.jpg";
-import ShailShah from "@/assets/team/ShailShah.jpg";
-import ShyamRughani from "@/assets/team/ShyamRughani.jpeg";
-import StavanMehta from "@/assets/team/StavanMehta.jpg";
-import SurajNath from "@/assets/team/SurajNath.webp";
-import SwapneelSolanki from "@/assets/team/SwapneelSolanki.jpg";
-import VedantDomadiya from "@/assets/team/VedantDomadiya.png";
-import ViralParmar from "@/assets/team/ViralParmar.webp";
-import YashNanda from "@/assets/team/YashNanda.jpg";
+import AbhishekSingh from "@/assets/2025/team/AbhishekSingh.jpg";
+import AmitRana from "@/assets/2025/team/AmitRana.jpg";
+import AshishTiwari from "@/assets/2025/team/AshishTiwari.webp";
+import AshishVaghela from "@/assets/2025/team/AshishVaghela.png";
+import AshishZapadiya from "@/assets/2025/team/AshishZapadiya.jpg";
+import BharatMakwana from "@/assets/2025/team/BharatMakwana.webp";
+import BhargavPithva from "@/assets/2025/team/BhargavPithva.webp";
+import BirajDesai from "@/assets/2025/team/BirajDesai.jpg";
+import DarshilVyas from "@/assets/2025/team/DarshilVyas.jpg";
+import DhananiTanvir from "@/assets/2025/team/DhananiTanvir.webp";
+import DhavalDesai from "@/assets/2025/team/DhavalDesai.webp";
+import DhwanitMistry from "@/assets/2025/team/DhwanitMistry.jpg";
+import DilipLuhar from "@/assets/2025/team/DilipLuhar.jpg";
+import EktaAgja from "@/assets/2025/team/EktaAgja.jpg";
+import FalgunBhalsod from "@/assets/2025/team/FalgunBhalsod.webp";
+import FennySheth from "@/assets/2025/team/FennySheth.png";
+import HarshilShah from "@/assets/2025/team/HarshilShah.jpg";
+import HarshManvar from "@/assets/2025/team/HarshManvar.webp";
+import HarshParekh from "@/assets/2025/team/HarshParekh.jpg";
+import Harshpatel from "@/assets/2025/team/Harshpatel.jpg";
+import JayDobariya from "@/assets/2025/team/JayDobariya.jpg";
+import JayrajRathod from "@/assets/2025/team/JayrajRathod.jpg";
+import JigneshGadhavi from "@/assets/2025/team/JigneshGadhavi.webp";
+import KajalSangani from "@/assets/2025/team/KajalSangani.jpeg";
+import KrishSatasiya from "@/assets/2025/team/KrishSatasiya.png";
+import KunjanAtara from "@/assets/2025/team/KunjanAtara.jpg";
+import MeetRaval from "@/assets/2025/team/MeetRaval.jpg";
+import MehulPatel from "@/assets/2025/team/MehulPatel.webp";
+import NeelShah from "@/assets/2025/team/NeelShah.webp";
+import NiravShah from "@/assets/2025/team/NiravShah.webp";
+import PranjalSingh from "@/assets/2025/team/PranjalSingh.jpg";
+import PrashantBhavsar from "@/assets/2025/team/PrashantBhavsar.webp";
+import PrathameshChavan from "@/assets/2025/team/PrathameshChavan.webp";
+import PratikPopat from "@/assets/2025/team/PratikPopat.jpeg";
+import RinkeshBansal from "@/assets/2025/team/RinkeshBansal.webp";
+import RohitChavda from "@/assets/2025/team/RohitChavda.webp";
+import RonitGandhi from "@/assets/2025/team/RonitGandhi.jpg";
+import RutviPatel from "@/assets/2025/team/RutviPatel.jpg";
+import SanketTank from "@/assets/2025/team/SanketTank.jpg";
+import ShabbirAli from "@/assets/2025/team/ShabbirAli.jpg";
+import ShailShah from "@/assets/2025/team/ShailShah.jpg";
+import ShyamRughani from "@/assets/2025/team/ShyamRughani.jpeg";
+import StavanMehta from "@/assets/2025/team/StavanMehta.jpg";
+import SurajNath from "@/assets/2025/team/SurajNath.webp";
+import SwapneelSolanki from "@/assets/2025/team/SwapneelSolanki.jpg";
+import VedantDomadiya from "@/assets/2025/team/VedantDomadiya.png";
+import ViralParmar from "@/assets/2025/team/ViralParmar.webp";
+import YashNanda from "@/assets/2025/team/YashNanda.jpg";
 
-import KalyanPrasad from "@/assets/team/KalyanPrasad.webp";
-import SantoshYadav from "@/assets/team/SantoshYadav.webp";
-import VishalRajpurohit from "@/assets/team/VishalRajpurohit.webp";
+import KalyanPrasad from "@/assets/2025/team/KalyanPrasad.webp";
+import SantoshYadav from "@/assets/2025/team/SantoshYadav.webp";
+import VishalRajpurohit from "@/assets/2025/team/VishalRajpurohit.webp";
 
 // Speaker Imports
-import SanjayVaghela from "@/assets/speakers/SanjayVaghela.png";
-// import AshishTiwari from "@/assets/speakers/AshishTiwari.png"; Repeat
-import DevarshShah from "@/assets/speakers/DevarshShah.png";
-import KrupaGaliya from "@/assets/speakers/KrupaGaliya.png";
-import NishargShah from "@/assets/speakers/NishargShah.png";
-import RishangBhavsar from "@/assets/speakers/RishangBhavsar.png";
-import RonakGanatra from "@/assets/speakers/RonakGanatra.png";
-import RuchitPatel from "@/assets/speakers/RuchitPatel.png";
-import SantoshViswanatham from "@/assets/speakers/SantoshViswanatham.png";
-// import DishantMakwana from "@/assets/speakers/DishantMakwana.png";
-import AnshArora from "@/assets/speakers/AnshArora.jpeg";
-import AshishPatel from "@/assets/speakers/AshishPatel.jpeg";
-import BhavikaPatel from "@/assets/speakers/BhavikaPatel.png";
-import ChetanSoni from "@/assets/speakers/chetan_soni.jpg";
-import ChetanSheladiya from "@/assets/speakers/ChetanSheladiya.png";
-import ChinmayShah from "@/assets/speakers/ChinmayShah.jpeg";
-import HarshadModi from "@/assets/speakers/HarshadModi.png";
-import JayThakkar from "@/assets/speakers/JayThakkar.jpg";
-import KiranTrivedi from "@/assets/speakers/kiran_trivedi.jpeg";
-import MukeshGoswami from "@/assets/speakers/MukeshGoswami.png";
-import NiravGohil from "@/assets/speakers/NiravGohil.jpg";
-import ParthPandya from "@/assets/speakers/ParthPandya.png";
-import PratikBhatt from "@/assets/speakers/PratikBhatt.jpg";
-import ShreyanMehta from "@/assets/speakers/shreyan_mehta.jpeg";
-import Someshwaran from "@/assets/speakers/someshwaran.png";
-import VarunPandya from "@/assets/speakers/varun_pandya.jpeg";
-import VijayGolani from "@/assets/speakers/VijayGolani.jpg";
-import VikasRajput from "@/assets/speakers/VikasRajput.jpg";
+import SanjayVaghela from "@/assets/2025/speakers/SanjayVaghela.png";
+// import AshishTiwari from "@/assets/2025/speakers/AshishTiwari.png"; Repeat
+import DevarshShah from "@/assets/2025/speakers/DevarshShah.png";
+import KrupaGaliya from "@/assets/2025/speakers/KrupaGaliya.png";
+import NishargShah from "@/assets/2025/speakers/NishargShah.png";
+import RishangBhavsar from "@/assets/2025/speakers/RishangBhavsar.png";
+import RonakGanatra from "@/assets/2025/speakers/RonakGanatra.png";
+import RuchitPatel from "@/assets/2025/speakers/RuchitPatel.png";
+import SantoshViswanatham from "@/assets/2025/speakers/SantoshViswanatham.png";
+// import DishantMakwana from "@/assets/2025/speakers/DishantMakwana.png";
+import AnshArora from "@/assets/2025/speakers/AnshArora.jpeg";
+import AshishPatel from "@/assets/2025/speakers/AshishPatel.jpeg";
+import BhavikaPatel from "@/assets/2025/speakers/BhavikaPatel.png";
+import ChetanSoni from "@/assets/2025/speakers/chetan_soni.jpg";
+import ChetanSheladiya from "@/assets/2025/speakers/ChetanSheladiya.png";
+import ChinmayShah from "@/assets/2025/speakers/ChinmayShah.jpeg";
+import HarshadModi from "@/assets/2025/speakers/HarshadModi.png";
+import JayThakkar from "@/assets/2025/speakers/JayThakkar.jpg";
+import KiranTrivedi from "@/assets/2025/speakers/kiran_trivedi.jpeg";
+import MukeshGoswami from "@/assets/2025/speakers/MukeshGoswami.png";
+import NiravGohil from "@/assets/2025/speakers/NiravGohil.jpg";
+import ParthPandya from "@/assets/2025/speakers/ParthPandya.png";
+import PratikBhatt from "@/assets/2025/speakers/PratikBhatt.jpg";
+import ShreyanMehta from "@/assets/2025/speakers/shreyan_mehta.jpeg";
+import Someshwaran from "@/assets/2025/speakers/someshwaran.png";
+import VarunPandya from "@/assets/2025/speakers/varun_pandya.jpeg";
+import VijayGolani from "@/assets/2025/speakers/VijayGolani.jpg";
+import VikasRajput from "@/assets/2025/speakers/VikasRajput.jpg";
 
 // Past Events Images Imports
 import OSWMay_1 from "@/assets/PastEvents/OSW-may/Image_20250504_135007_012.webp";
@@ -148,8 +148,8 @@ import Mail from "@/assets/icons/mail.svg";
 import MediumIcon from "@/assets/icons/medium.svg";
 import Phone from "@/assets/icons/phone.svg";
 import TwitterIcon from "@/assets/icons/x.svg";
-import GoogleForDevelopers from "@/assets/partners/GoogleForDevelopers.png";
-import SOU from "@/assets/partners/Silver Oak University.png";
+import GoogleForDevelopers from "@/assets/2025/partners/GoogleForDevelopers.png";
+import SOU from "@/assets/2025/partners/Silver Oak University.png";
 
 export const SITE = {
   title: "2025 OpenSourceDay",
@@ -451,18 +451,18 @@ export const EVENT = {
 
 export const NAVIGATION = {
   items: [
-    { name: "Speakers", href: "/speakers" },
-    { name: "Schedule", href: "/schedule" },
-    { name: "Team", href: "/team" },
-    { name: "Tickets", href: "/tickets" },
-    { name: "Sponsors", href: "/sponsors" },
-    { name: "Venue", href: "/venue" },
-    { name: "Badge", href: "/badge" },
-    { name: "Past Events", href: "/past-events" },
+    { name: "Speakers", href: "/2025/speakers" },
+    { name: "Schedule", href: "/2025/schedule" },
+    { name: "Team", href: "/2025/team" },
+    { name: "Tickets", href: "/2025/tickets" },
+    { name: "Sponsors", href: "/2025/sponsors" },
+    { name: "Venue", href: "/2025/venue" },
+    { name: "Badge", href: "/2025/badge" },
+    { name: "Past Events", href: "/2025/past-events" },
   ],
   cta: {
     text: "Gallery",
-    url: "/gallery",
+    url: "/2025/gallery",
   },
 };
 
@@ -1343,12 +1343,12 @@ export const FOOTER = {
   description:
     "Open Source Day 2025 - A community-driven event celebrating open source innovation. Join developers, maintainers, and enthusiasts for learning and collaboration.",
   quickLinks: [
-    { name: "Speakers", href: "/speakers" },
-    { name: "Schedule", href: "/schedule" },
-    { name: "Venue", href: "/venue" },
-    { name: "Tickets", href: "/tickets" },
-    { name: "My Badge", href: "/my-badge" },
-    { name: "Past Events", href: "/past-events" },
+    { name: "Speakers", href: "/2025/speakers" },
+    { name: "Schedule", href: "/2025/schedule" },
+    { name: "Venue", href: "/2025/venue" },
+    { name: "Tickets", href: "/2025/tickets" },
+    { name: "My Badge", href: "/2025/badge" },
+    { name: "Past Events", href: "/2025/past-events" },
   ],
   legal: [
     { name: "Privacy Policy", href: "/privacy" },
