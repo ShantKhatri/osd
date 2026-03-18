@@ -1,6 +1,7 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import { EVENT, SITE, BRANDING } from "@/config/config";
 import Cropper from "react-easy-crop";
+import heic2any from "heic2any";
 
 const loadImage = (src) => {
   return new Promise((resolve) => {
@@ -153,6 +154,10 @@ const BackgroundGraphics = ({ color }) => (
 );
 
 const BadgeMaker = () => {
+  const NAME_MAX = 28;
+  const ROLE_MAX = 30;
+  const COMPANY_MAX = 30;
+
   const [fontsLoaded, setFontsLoaded] = useState(false);
   const [selectedTemplate, setSelectedTemplate] = useState("attendee");
   const [uploadedImage, setUploadedImage] = useState(null);
@@ -160,6 +165,7 @@ const BadgeMaker = () => {
   const [userRole, setUserRole] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [canNativeShare, setCanNativeShare] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const canvasRef = useRef(null);
   const fileInputRef = useRef(null);
@@ -187,31 +193,80 @@ const BadgeMaker = () => {
 
   const currentTemplate = templates.find((t) => t.id === selectedTemplate) || templates[1];
 
-  const handleFileUpload = (event) => {
+  const handleFileUpload = async (event) => {
     const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        setUploadedImage(e.target.result);
+    if (!file) return;
+
+    const isHeic = /\.(heic|heif)$/i.test(file.name) || /heic|heif/.test(file.type);
+    if (isHeic) {
+      setErrorMessage("Converting HEIC/HEIF to PNG (this may take 1-2s)...");
+      setUploadedImage(null);
+      setIsCropping(false);
+
+      try {
+        const arrayBuffer = await file.arrayBuffer();
+        const converted = await heic2any({ blob: new Blob([arrayBuffer]), toType: "image/png", quality: 0.92 });
+        const processed = Array.isArray(converted) ? converted[0] : converted;
+        const url = URL.createObjectURL(processed);
+
+        // Set the converted image for cropper.
+        setUploadedImage(url);
         setIsCropping(true);
-      };
-      reader.readAsDataURL(file);
+        setErrorMessage("");
+      } catch (err) {
+        console.error("HEIC conversion failed", err);
+        setErrorMessage("Unable to process HEIC/HEIF file. Please try another image format.");
+        setUploadedImage(null);
+      }
+
+      return;
     }
+
+    setErrorMessage("");
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      setUploadedImage(e.target.result);
+      setIsCropping(true);
+    };
+    reader.onerror = () => {
+      setErrorMessage("Unable to read this image. Please use PNG/JPEG.");
+      setUploadedImage(null);
+      setIsCropping(false);
+    };
+    reader.readAsDataURL(file);
   };
 
   const getCroppedImg = (imageSrc, pixelCrop) => {
     return new Promise((resolve, reject) => {
+      if (!imageSrc) {
+        reject(new Error("No image source provided"));
+        return;
+      }
+      if (!pixelCrop || !pixelCrop.width || !pixelCrop.height) {
+        reject(new Error("Invalid crop area"));
+        return;
+      }
+
       const image = new Image();
+      image.crossOrigin = "anonymous";
       image.src = imageSrc;
+
       image.onload = () => {
-        const canvas = document.createElement("canvas");
-        canvas.width = pixelCrop.width;
-        canvas.height = pixelCrop.height;
-        const ctx = canvas.getContext("2d");
-        ctx.drawImage(image, pixelCrop.x, pixelCrop.y, pixelCrop.width, pixelCrop.height, 0, 0, pixelCrop.width, pixelCrop.height);
-        resolve(canvas.toDataURL("image/png", 1.0));
+        try {
+          const canvas = document.createElement("canvas");
+          canvas.width = pixelCrop.width;
+          canvas.height = pixelCrop.height;
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(image, pixelCrop.x, pixelCrop.y, pixelCrop.width, pixelCrop.height, 0, 0, pixelCrop.width, pixelCrop.height);
+          resolve(canvas.toDataURL("image/png", 1.0));
+        } catch (error) {
+          reject(error);
+        }
       };
-      image.onerror = reject;
+
+      image.onerror = () => {
+        reject(new Error("Unable to load image. Please re-upload in PNG/JPEG format."));
+      };
     });
   };
 
@@ -557,27 +612,35 @@ const BadgeMaker = () => {
     // Company & Custom Role
     const companyText = companyName.trim();
     const roleInputText = userRole.trim();
-    let compY = nameY + 45;
+    const hasCompanyOrRole = Boolean(companyText || roleInputText);
 
-    if (companyText || roleInputText) {
+    const tagY = nameY + 80;
+    const compY = tagY - 45;
+
+    if (hasCompanyOrRole) {
       let displayStr = "";
       if (roleInputText && companyText) {
-        displayStr = `${roleInputText} @ ${companyText}`;
+        displayStr = `${roleInputText} @${companyText}`;
       } else if (roleInputText) {
         displayStr = roleInputText;
       } else {
-        displayStr = `@ ${companyText}`;
+        displayStr = `@${companyText}`;
       }
 
-      ctx.fillStyle = "rgba(0,0,0,0.6)";
+      // Truncate displayed text for badge area to avoid overflow
+      const maxBadgeText = 42;
+      if (displayStr.length > maxBadgeText) {
+        displayStr = `${displayStr.slice(0, maxBadgeText - 1)}…`;
+      }
+
       ctx.font = "600 24px 'Space Grotesk'";
+      ctx.fillStyle = "rgba(0,0,0,0.6)";
+      ctx.textAlign = "center";
       ctx.fillText(displayStr, width / 2, compY);
-    } else {
-      compY = nameY; // offset if no company/role
     }
 
     // 9. Template Tag
-    const roleY = compY + 55;
+    const roleY = tagY;
     const roleText = `< ${currentTemplate.title.toUpperCase()} />`;
     ctx.font = "700 22px 'JetBrains Mono'";
     const roleWidth = ctx.measureText(roleText).width;
@@ -691,7 +754,11 @@ const BadgeMaker = () => {
   }, [uploadedImage, userName, userRole, companyName, selectedTemplate, currentTemplate, fontsLoaded]);
 
   useEffect(() => {
-    drawBadge();
+    const timeout = setTimeout(() => {
+      drawBadge();
+    }, 120);
+
+    return () => clearTimeout(timeout);
   }, [drawBadge]);
 
   useEffect(() => {
@@ -806,27 +873,30 @@ const BadgeMaker = () => {
                 <input
                   type="text"
                   value={userName}
-                  onChange={(e) => setUserName(e.target.value)}
+                  onChange={(e) => setUserName(e.target.value.slice(0, NAME_MAX))}
                   placeholder="Enter your name"
                   className="w-full bg-white text-gray-900 px-5 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-opacity-50 focus:border-transparent outline-none transition-all placeholder-gray-400 shadow-sm"
                   style={{ focusRing: currentTemplate.color }}
                 />
+                {/* <p className="text-xs text-gray-400">{userName.length}/{NAME_MAX}</p>  Character count can be re-enabled if needed, but the badge itself will truncate if it exceeds space constraints */}
                 <input
                   type="text"
                   value={userRole}
-                  onChange={(e) => setUserRole(e.target.value)}
+                  onChange={(e) => setUserRole(e.target.value.slice(0, ROLE_MAX))}
                   placeholder="Your Role (Optional)"
                   className="w-full bg-white text-gray-900 px-5 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-opacity-50 focus:border-transparent outline-none transition-all placeholder-gray-400 shadow-sm"
                   style={{ focusRing: currentTemplate.color }}
                 />
+                {/* <p className="text-xs text-gray-400">{userRole.length}/{ROLE_MAX}</p> // Role is displayed on badge if provided, but optional for those who prefer not to share */}
                 <input
                   type="text"
                   value={companyName}
-                  onChange={(e) => setCompanyName(e.target.value)}
+                  onChange={(e) => setCompanyName(e.target.value.slice(0, COMPANY_MAX))}
                   placeholder="Company / Community (Optional)"
                   className="w-full bg-white text-gray-900 px-5 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-opacity-50 focus:border-transparent outline-none transition-all placeholder-gray-400 shadow-sm"
                   style={{ focusRing: currentTemplate.color }}
                 />
+                {/* <p className="text-xs text-gray-400">{companyName.length}/{COMPANY_MAX}</p> // Company is optional, but helps us understand our attendees better. It will be displayed on the badge if provided. */}
               </div>
             </div>
 
@@ -836,7 +906,7 @@ const BadgeMaker = () => {
                 <span className="bg-gray-100 text-gray-600 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold border border-gray-200">
                   2
                 </span>
-                <span>Access Level</span>
+                <span>Joining as</span>
               </h2>
               <div className="grid grid-cols-1 gap-3">
                 {templates.map((template) => (
@@ -868,7 +938,7 @@ const BadgeMaker = () => {
                 <span className="bg-gray-100 text-gray-600 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold border border-gray-200">
                   3
                 </span>
-                <span>Biometric Data</span>
+                <span> Image or photo</span>
               </h2>
 
               {!uploadedImage ? (
@@ -886,8 +956,8 @@ const BadgeMaker = () => {
                       />
                     </svg>
                   </div>
-                  <p className="text-gray-500 text-sm font-medium">Click to scan image</p>
-                  <input ref={fileInputRef} type="file" accept="image/*" onChange={handleFileUpload} className="hidden" />
+                  <p className="text-gray-500 text-sm font-medium">Choose your image</p>
+                  <input ref={fileInputRef} type="file" accept="image/*,.heic,.heif" onChange={handleFileUpload} className="hidden" />
                 </div>
               ) : (
                 <div className="space-y-4">
@@ -918,7 +988,11 @@ const BadgeMaker = () => {
                         <div className="flex space-x-3 w-full">
                           <button
                             className="flex-1 bg-gray-200 text-gray-800 font-semibold px-4 py-3 rounded-xl hover:bg-gray-300 transition"
-                            onClick={() => setIsCropping(false)}
+                            onClick={() => {
+                              setUploadedImage(null);
+                              setIsCropping(false);
+                              setErrorMessage("");
+                            }}
                           >
                             Cancel
                           </button>
@@ -926,9 +1000,15 @@ const BadgeMaker = () => {
                             className="flex-1 text-white font-semibold px-4 py-3 rounded-xl transition hover:opacity-90"
                             style={{ backgroundColor: currentTemplate.color }}
                             onClick={async () => {
-                              const croppedImg = await getCroppedImg(uploadedImage, croppedAreaPixels);
-                              setUploadedImage(croppedImg);
-                              setIsCropping(false);
+                              try {
+                                const croppedImg = await getCroppedImg(uploadedImage, croppedAreaPixels);
+                                setUploadedImage(croppedImg);
+                                setIsCropping(false);
+                                setErrorMessage("");
+                              } catch (error) {
+                                setErrorMessage("Could not crop the selected image. Please upload JPEG or PNG and try again.");
+                                console.error(error);
+                              }
                             }}
                           >
                             Approve
@@ -945,6 +1025,12 @@ const BadgeMaker = () => {
                     >
                       Clear Data
                     </button>
+                  )}
+
+                  {errorMessage && (
+                    <div className="mt-4 p-3 border border-red-200 rounded-lg bg-red-50 text-red-700 text-sm">
+                      {errorMessage}
+                    </div>
                   )}
                 </div>
               )}
