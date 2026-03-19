@@ -78,13 +78,6 @@ const templates = [
     color: "#4f46e5",
     bgColor: "rgba(79, 70, 229, 0.15)",
   },
-  {
-    id: "volunteer",
-    title: "Volunteering",
-    subtitle: "Open Source Day 2026",
-    color: "#f59e0b",
-    bgColor: "rgba(245, 158, 11, 0.15)",
-  },
 ];
 
 const BackgroundGraphics = ({ color }) => (
@@ -997,7 +990,7 @@ const BadgeMaker = () => {
                 </span>
                 <span>Joining as</span>
               </h2>
-              <div className="grid grid-cols-1 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {templates.map((template) => (
                   <button
                     key={template.id}
@@ -1014,7 +1007,7 @@ const BadgeMaker = () => {
                   >
                     <div className="w-4 h-4 rounded-full shadow-md" style={{ backgroundColor: template.color }}></div>
                     <div className="text-left">
-                      <div className="font-semibold text-gray-900 tracking-wide">{template.title}</div>
+                      <div className="font-semibold text-gray-900 tracking-wide text-sm">{template.title}</div>
                     </div>
                   </button>
                 ))}
