@@ -160,12 +160,14 @@ const BadgeMaker = () => {
 
   const [fontsLoaded, setFontsLoaded] = useState(false);
   const [selectedTemplate, setSelectedTemplate] = useState("attendee");
-  const [uploadedImage, setUploadedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null); // use for immediate crop source
+  const [badgeImage, setBadgeImage] = useState(null); // approved/cropped image for badge
   const [userName, setUserName] = useState("");
   const [userRole, setUserRole] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [canNativeShare, setCanNativeShare] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [isConvertingHeic, setIsConvertingHeic] = useState(false);
 
   const canvasRef = useRef(null);
   const fileInputRef = useRef(null);
@@ -192,6 +194,8 @@ const BadgeMaker = () => {
   }, []);
 
   const currentTemplate = templates.find((t) => t.id === selectedTemplate) || templates[1];
+  const isRoleCompanyValid = Boolean(userRole.trim() && companyName.trim());
+  const canExport = isRoleCompanyValid && Boolean(badgeImage);
 
   const handleFileUpload = async (event) => {
     const file = event.target.files[0];
@@ -199,8 +203,9 @@ const BadgeMaker = () => {
 
     const isHeic = /\.(heic|heif)$/i.test(file.name) || /heic|heif/.test(file.type);
     if (isHeic) {
+      setIsConvertingHeic(true);
       setErrorMessage("Converting HEIC/HEIF to PNG (this may take 1-2s)...");
-      setUploadedImage(null);
+      setSelectedImage(null);
       setIsCropping(false);
 
       try {
@@ -210,27 +215,31 @@ const BadgeMaker = () => {
         const url = URL.createObjectURL(processed);
 
         // Set the converted image for cropper.
-        setUploadedImage(url);
+        setSelectedImage(url);
         setIsCropping(true);
         setErrorMessage("");
       } catch (err) {
         console.error("HEIC conversion failed", err);
         setErrorMessage("Unable to process HEIC/HEIF file. Please try another image format.");
-        setUploadedImage(null);
+        setSelectedImage(null);
+      } finally {
+        setIsConvertingHeic(false);
       }
 
       return;
     }
 
+    setIsConvertingHeic(false);
     setErrorMessage("");
     const reader = new FileReader();
     reader.onload = (e) => {
-      setUploadedImage(e.target.result);
+      setSelectedImage(e.target.result); // set temporary for cropper only
       setIsCropping(true);
+      setErrorMessage("");
     };
     reader.onerror = () => {
       setErrorMessage("Unable to read this image. Please use PNG/JPEG.");
-      setUploadedImage(null);
+      setSelectedImage(null);
       setIsCropping(false);
     };
     reader.readAsDataURL(file);
@@ -422,7 +431,7 @@ const BadgeMaker = () => {
     // React-easy-crop / local dev setup may need direct import, but for canvas we can just use the path
     const [logoObj, imgObj, skylineObj, mascotObj] = await Promise.all([
       loadImage(typeof BRANDING.logos.main === "string" ? BRANDING.logos.main : BRANDING.logos.main?.src),
-      loadImage(uploadedImage),
+      loadImage(badgeImage),
       loadImage(svgUrl),
       loadImage(mascotPath),
     ]);
@@ -751,7 +760,7 @@ const BadgeMaker = () => {
     ctx.fillStyle = "rgba(0,0,0,0.4)";
     ctx.font = "500 12px 'Space Grotesk'";
     ctx.fillText("AUTHORIZED ACCESS ONLY", width - 50, bottomY + 80);
-  }, [uploadedImage, userName, userRole, companyName, selectedTemplate, currentTemplate, fontsLoaded]);
+  }, [badgeImage, userName, userRole, companyName, selectedTemplate, currentTemplate, fontsLoaded]);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -768,6 +777,16 @@ const BadgeMaker = () => {
   }, []);
 
   const downloadBadge = () => {
+    if (!isRoleCompanyValid) {
+      setErrorMessage("Role and Company/Community are required before exporting.");
+      return;
+    }
+
+    if (!badgeImage) {
+      setErrorMessage("Please select and approve your photo before exporting.");
+      return;
+    }
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const link = document.createElement("a");
@@ -777,6 +796,16 @@ const BadgeMaker = () => {
   };
 
   const shareToSocial = async (platform) => {
+    if (!isRoleCompanyValid) {
+      setErrorMessage("Role and Company/Community are required before sharing.");
+      return;
+    }
+
+    if (!badgeImage) {
+      setErrorMessage("Please select and approve your photo before sharing.");
+      return;
+    }
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -823,6 +852,16 @@ const BadgeMaker = () => {
   };
 
   const copyToClipboard = async () => {
+    if (!isRoleCompanyValid) {
+      setErrorMessage("Role and Company/Community are required before copying.");
+      return;
+    }
+
+    if (!badgeImage) {
+      setErrorMessage("Please select and approve your photo before copying.");
+      return;
+    }
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     try {
@@ -883,16 +922,17 @@ const BadgeMaker = () => {
                   type="text"
                   value={userRole}
                   onChange={(e) => setUserRole(e.target.value.slice(0, ROLE_MAX))}
-                  placeholder="Your Role (Optional)"
+                  placeholder="Your Role"
+                  required
                   className="w-full bg-white text-gray-900 px-5 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-opacity-50 focus:border-transparent outline-none transition-all placeholder-gray-400 shadow-sm"
                   style={{ focusRing: currentTemplate.color }}
                 />
-                {/* <p className="text-xs text-gray-400">{userRole.length}/{ROLE_MAX}</p> // Role is displayed on badge if provided, but optional for those who prefer not to share */}
                 <input
                   type="text"
                   value={companyName}
                   onChange={(e) => setCompanyName(e.target.value.slice(0, COMPANY_MAX))}
-                  placeholder="Company / Community (Optional)"
+                  placeholder="Company / Community"
+                  required
                   className="w-full bg-white text-gray-900 px-5 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-opacity-50 focus:border-transparent outline-none transition-all placeholder-gray-400 shadow-sm"
                   style={{ focusRing: currentTemplate.color }}
                 />
@@ -941,7 +981,12 @@ const BadgeMaker = () => {
                 <span> Image or photo</span>
               </h2>
 
-              {!uploadedImage ? (
+              {isConvertingHeic ? (
+                <div className="border-2 border-dashed border-blue-300 rounded-xl p-8 text-center bg-blue-50 overflow-hidden">
+                  <div className="spinner-border animate-spin inline-block w-10 h-10 border-4 rounded-full border-current border-r-transparent text-blue-600" role="status"></div>
+                  <p className="mt-3 text-blue-700 font-medium">Converting HEIC/HEIF to PNG...</p>
+                </div>
+              ) : !selectedImage && !badgeImage ? (
                 <div
                   className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center bg-gray-50 hover:bg-gray-100 transition-colors cursor-pointer group"
                   onClick={() => fileInputRef.current?.click()}
@@ -961,11 +1006,11 @@ const BadgeMaker = () => {
                 </div>
               ) : (
                 <div className="space-y-4">
-                  {isCropping && (
+                  {isCropping && selectedImage && (
                     <div className="w-full">
                       <div className="relative w-full h-[300px] bg-black rounded-xl overflow-hidden shadow-inner border border-gray-200">
                         <Cropper
-                          image={uploadedImage}
+                          image={selectedImage}
                           crop={crop}
                           zoom={zoom}
                           aspect={1}
@@ -989,7 +1034,7 @@ const BadgeMaker = () => {
                           <button
                             className="flex-1 bg-gray-200 text-gray-800 font-semibold px-4 py-3 rounded-xl hover:bg-gray-300 transition"
                             onClick={() => {
-                              setUploadedImage(null);
+                              setSelectedImage(null);
                               setIsCropping(false);
                               setErrorMessage("");
                             }}
@@ -1001,8 +1046,9 @@ const BadgeMaker = () => {
                             style={{ backgroundColor: currentTemplate.color }}
                             onClick={async () => {
                               try {
-                                const croppedImg = await getCroppedImg(uploadedImage, croppedAreaPixels);
-                                setUploadedImage(croppedImg);
+                                const croppedImg = await getCroppedImg(selectedImage, croppedAreaPixels);
+                                setBadgeImage(croppedImg);
+                                setSelectedImage(null);
                                 setIsCropping(false);
                                 setErrorMessage("");
                               } catch (error) {
@@ -1018,9 +1064,12 @@ const BadgeMaker = () => {
                     </div>
                   )}
 
-                  {!isCropping && (
+                  {!isCropping && badgeImage && (
                     <button
-                      onClick={() => setUploadedImage(null)}
+                      onClick={() => {
+                        setBadgeImage(null);
+                        setErrorMessage("");
+                      }}
                       className="w-full bg-red-50 text-red-600 font-medium px-4 py-3 rounded-xl border border-red-200 hover:bg-red-100 transition-colors"
                     >
                       Clear Data
@@ -1054,7 +1103,8 @@ const BadgeMaker = () => {
             <div className="w-full max-w-[450px] mt-8 grid grid-cols-2 gap-4">
               <button
                 onClick={downloadBadge}
-                className="col-span-2 py-4 rounded-xl font-bold flex items-center justify-center space-x-2 transition-all transform hover:scale-[1.02] text-white shadow-md hover:shadow-lg"
+                disabled={!canExport}
+                className={`col-span-2 py-4 rounded-xl font-bold flex items-center justify-center space-x-2 transition-all transform ${canExport ? "hover:scale-[1.02] shadow-md hover:shadow-lg" : "opacity-50 cursor-not-allowed"}`}
                 style={{ backgroundColor: currentTemplate.color }}
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1065,7 +1115,8 @@ const BadgeMaker = () => {
 
               <button
                 onClick={copyToClipboard}
-                className="col-span-2 bg-white text-gray-700 font-semibold py-3 rounded-xl hover:bg-gray-50 transition flex items-center justify-center space-x-2 border border-gray-200 shadow-sm hover:shadow"
+                disabled={!canExport}
+                className={`col-span-2 bg-white text-gray-700 font-semibold py-3 rounded-xl transition flex items-center justify-center space-x-2 border border-gray-200 shadow-sm ${canExport ? "hover:bg-gray-50 hover:shadow" : "opacity-50 cursor-not-allowed"}`}
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
