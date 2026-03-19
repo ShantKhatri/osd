@@ -97,8 +97,8 @@ const deadline = CALLS_2026[0].deadline;
                 : section.speakers.length === 2
                 ? "grid-cols-1 xs:grid-cols-2 max-w-2xl mx-auto"
                 : section.speakers.length <= 3
-                ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto"
-                : "grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+                ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto"
+                : "grid-cols-1 md:grid-cols-3 lg:grid-cols-4"
             }`}>
               {section.speakers.map((speaker: ResolvedSpeaker) => (
                 <div class="group relative bg-white border border-gray-100 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-green-200 flex flex-col">
@@ -109,11 +109,12 @@ const deadline = CALLS_2026[0].deadline;
                   <!-- Photo area -->
                   <div class="relative w-full aspect-[4/5] bg-gradient-to-br from-green-50 to-emerald-100 overflow-hidden">
                     {speaker.imageUrl ? (
+
                       <Image
                         src={speaker.imageUrl}
                         alt={speaker.name}
                         loading="lazy"
-                        class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 pt-4 px-4"
                         width={400}
                         height={500}
                       />
@@ -163,7 +164,7 @@ const deadline = CALLS_2026[0].deadline;
                         {speaker.event.trim()}
                       </span>
                     )}
-                    
+
 
                     <!-- Presentation title -->
                     {speaker.presentationTitle && (
@@ -290,13 +291,13 @@ const deadline = CALLS_2026[0].deadline;
                   {speaker.position}{speaker.position && speaker.company ? " · " : ""}{speaker.company?.trim()}
                 </p>
 
-                
+
                 {speaker.presentationTitle && (
                   <p class="text-[0.65rem] text-gray-400 mt-2 leading-relaxed line-clamp-2">
                     {speaker.presentationTitle.trim()}
                   </p>
                 )}
-                
+
                 {speaker.tags.length > 0 && (
                   <div class="flex flex-wrap gap-1 mt-2">
                     {speaker.tags.map((tag) => (
