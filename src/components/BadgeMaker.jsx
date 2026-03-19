@@ -16,24 +16,73 @@ const loadImage = (src) => {
 
 const templates = [
   {
-    id: "speaker",
-    title: "Speaking",
+    id: "crew",
+    title: "Crew",
     subtitle: "Open Source Day 2026",
-    color: "#10B981", // Emerald
-    bgColor: "rgba(16, 185, 129, 0.15)",
+    color: "#0f766e",
+    bgColor: "rgba(15, 118, 110, 0.15)",
+  },
+  {
+    id: "speaker",
+    title: "Speaker",
+    subtitle: "Open Source Day 2026",
+    color: "#1d4ed8",
+    bgColor: "rgba(29, 78, 216, 0.15)",
+  },
+  {
+    id: "cxo",
+    title: "CXO",
+    subtitle: "Open Source Day 2026",
+    color: "#9333ea",
+    bgColor: "rgba(147, 51, 234, 0.15)",
+  },
+  {
+    id: "community-leader",
+    title: "Community Leader",
+    subtitle: "Open Source Day 2026",
+    color: "#0284c7",
+    bgColor: "rgba(2, 132, 199, 0.15)",
+  },
+  {
+    id: "advisory-council",
+    title: "Advisory Council",
+    subtitle: "Open Source Day 2026",
+    color: "#0ea5e9",
+    bgColor: "rgba(14, 165, 233, 0.15)",
+  },
+  {
+    id: "mentor-board",
+    title: "Mentor Board",
+    subtitle: "Open Source Day 2026",
+    color: "#16a34a",
+    bgColor: "rgba(22, 163, 74, 0.15)",
+  },
+  {
+    id: "hr",
+    title: "HR",
+    subtitle: "Open Source Day 2026",
+    color: "#db2777",
+    bgColor: "rgba(219, 39, 119, 0.15)",
+  },
+  {
+    id: "evangelist",
+    title: "Evangelist",
+    subtitle: "Open Source Day 2026",
+    color: "#14b8a6",
+    bgColor: "rgba(20, 184, 166, 0.15)",
   },
   {
     id: "attendee",
-    title: "Attending",
+    title: "Attendee",
     subtitle: "Open Source Day 2026",
-    color: "#6366F1", // Indigo
-    bgColor: "rgba(99, 102, 241, 0.15)",
+    color: "#4f46e5",
+    bgColor: "rgba(79, 70, 229, 0.15)",
   },
   {
     id: "volunteer",
     title: "Volunteering",
     subtitle: "Open Source Day 2026",
-    color: "#F59E0B", // Amber
+    color: "#f59e0b",
     bgColor: "rgba(245, 158, 11, 0.15)",
   },
 ];
