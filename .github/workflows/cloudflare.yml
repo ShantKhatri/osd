@@ -3,7 +3,6 @@ name: Redeploy on Strapi Update
 on:
   repository_dispatch:
     types: [strapi-update]
-
   workflow_dispatch:
 
 permissions:
@@ -17,13 +16,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          ref: main
+          fetch-depth: 0
           persist-credentials: true
 
-      - name: Make empty commit
+      - name: Configure Git
         run: |
           git config --global user.name "osw-bot"
           git config --global user.email "bot@opensourceweekend.org"
-          git commit --allow-empty -m "chore: rebuild triggered by webhook api"
+
+      - name: Update rebuild file
+        run: |
+          echo "$(date)" > rebuild.txt
+          git add rebuild.txt
+          git commit -m "chore: rebuild triggered by webhook"
+
+      - name: Sync with remote
+        run: git pull origin main --rebase
 
       - name: Push commit
-        run: git push
+        run: git push origin HEAD:main
