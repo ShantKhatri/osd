@@ -1,0 +1,26 @@
+name: Redeploy on Strapi Update
+
+on:
+  repository_dispatch:
+    types: [strapi-update]
+
+  workflow_dispatch:
+
+jobs:
+  redeploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Make empty commit
+        run: |
+          git config --global user.name "osw-bot"
+          git config --global user.email "bot@opensourceweekend.org"
+          git commit --allow-empty -m "chore: rebuild triggered by webhook api"
+
+      - name: Push commit
+        run: git push
