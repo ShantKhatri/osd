@@ -13,12 +13,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - name: Make empty commit
         run: |
-          git config --global user.name "OSW Bot"
+          git config --global user.name "osw-bot"
           git config --global user.email "bot@opensourceweekend.org"
-          git commit --allow-empty -m "Trigger rebuild from Strapi webhook"
+          git commit --allow-empty -m "chore: rebuild triggered by webhook api"
 
       - name: Push commit
         run: git push
