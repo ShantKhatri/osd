@@ -17,13 +17,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          ref: main
           persist-credentials: true
 
       - name: Make empty commit
         run: |
           git config --global user.name "osw-bot"
           git config --global user.email "bot@opensourceweekend.org"
+          git pull origin main --rebase
           git commit --allow-empty -m "chore: rebuild triggered by webhook api"
 
       - name: Push commit
-        run: git push
+        run: git push origin HEAD:main
