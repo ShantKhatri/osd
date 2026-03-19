@@ -241,7 +241,7 @@ const ticketsResponse = ticketsData?.tickets?.[0]?.tickets || [];
 
               {group.sponsors.length > MARQUEE_THRESHOLD ? (
                 <div class="w-full">
-                  <MarqueeLogos client:load logos={group.sponsors} duration={80} height={100} itemMinWidth={220} />
+                  <MarqueeLogos client:load logos={group.sponsors} duration={80} height={150} itemMinWidth={320} />
                 </div>
               ) : (
                 <div class={`grid gap-5 ${
@@ -258,7 +258,9 @@ const ticketsResponse = ticketsData?.tickets?.[0]?.tickets || [];
                     >
                       <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-green-400 to-emerald-500 rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
                       {sponsor.logoUrl ? (
-                        <Image src={sponsor.logoUrl} alt={`${sponsor.name} logo`} loading="lazy" class="max-h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" width={200} height={64} />
+                        <div>
+                          <Image src={sponsor.logoUrl} alt={`${sponsor.name} logo`} loading="lazy" class="max-h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105" width={200} height={64} />
+                          </div>
                       ) : (
                         <div class="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center">
                           <span class="text-green-700 font-black text-xl">{sponsor.name.charAt(0)}</span>
