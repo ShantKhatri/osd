@@ -26,6 +26,3 @@ We are simultaneously improving the accuracy of data (removing mock data) and im
 1. Node version 20.x
 2. Install dependencies: `npm install`
 3. Run the development server: `npm run dev`
-
-##
-##
